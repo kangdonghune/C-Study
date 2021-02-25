@@ -57,6 +57,9 @@ void main()
 	itest = itest << 1;
 	cout << "itest = " << itest << endl;
 
+	int isome;
+	cin >> isome;
+	cout << isome << endl;
 }
 
 
