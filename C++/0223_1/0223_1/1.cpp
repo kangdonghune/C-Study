@@ -1,4 +1,4 @@
-#include <iostream> //#은 전 처리 지시자 . 전처리 단계에서 실행. include 는 포함하다. iostream 입출력 관련된 라이브러리를 포함하겠다.
+#include <iostream> //#은 전 처리 지시자 . 전처리 단계에서 실행. include 는 포함하다. iostream 입출력 관련된 라이브러리를 포함시킨다.
 /*
 
 */
@@ -20,11 +20,11 @@ namespace B
 	}
 }
 
-using namespace B; //using namespace를 남용하지 말자. 이왕이면 네임스페이스 연산자로
+using namespace b; //using namespace를 남용하지 말자. 이왕이면 네임스페이스 연산자로
 void main() //void 는 반환하는 값이 없다. main 은 함수의 이름. 진입점 함수. 시스템에서 호출. 반드시 단 하나만 존재해야 한다. ()외부에서 이 함수를 호출할 때 외부의 데이터를 받아올 수 있는 공간. 비어있으면 안 받겠다.
 {
-	// :: (네임스페이스 연산자) 
+	 //:: (네임스페이스 연산자) 
 	A::Show();
-	Show();
-	cout << "hello world" << endl; //cout = 콘솔창을 통해 출력하겠다.  endl = end lind 문자를 개행할 때 쓰는 것. cout endl 둘 다 객체다.; 은 이 줄이 끝났다고 알리는 것.
+	B::Show();
+	cout << "helo wolrld" << endl; //cout = 콘솔창을 통해 출력하겠다.  endl = end lind 문자를 개행할 때 쓰는 것. cout endl 둘 다 객체다.; 은 이 줄이 끝났다고 알리는 것.
 }
