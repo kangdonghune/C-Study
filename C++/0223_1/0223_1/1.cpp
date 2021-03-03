@@ -20,7 +20,7 @@ namespace B
 	}
 }
 
-using namespace b; //using namespace를 남용하지 말자. 이왕이면 네임스페이스 연산자로
+using namespace B; //using namespace를 남용하지 말자. 이왕이면 네임스페이스 연산자로
 void main() //void 는 반환하는 값이 없다. main 은 함수의 이름. 진입점 함수. 시스템에서 호출. 반드시 단 하나만 존재해야 한다. ()외부에서 이 함수를 호출할 때 외부의 데이터를 받아올 수 있는 공간. 비어있으면 안 받겠다.
 {
 	 //:: (네임스페이스 연산자) 
