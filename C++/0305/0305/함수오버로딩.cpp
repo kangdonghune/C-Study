@@ -25,5 +25,4 @@ int main()
 {
 	cout << Add(3, 2) << endl;
 	cout << Add(3.f, 2.f) << endl;
-
 }
