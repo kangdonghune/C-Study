@@ -31,7 +31,7 @@ int main()
 	cout << pTest << endl;
 	pTest = "game"; 
 	const char* pTest2 = pTest;
-	cout << pTest << endl; 
+	cout << pTest2 << endl; 
 	//포인터로 하면 초기화 이후에도 값 변경이 가능하다.
 	//다만 문자배열과 포인터의 차이점은 읽기가 아니고 쓰기가 가능하냐이다.
 	//문자배열은 공간을 받아서 배열을 만들어기에 특정 인덱스의 문자를 변경 가능하다.
@@ -64,6 +64,6 @@ int main()
 	//strcat_s(szName, szName2);// 뒤에 덧붙이는 것. 문자열 두개를 결합. (결합받을 대상, 결합하고자 하는 크기. 결합하고자 하는 대상)
 	cout << szName << endl; // 마찬가지로 결합받을 대상의 크기가 총 결합한 길이보다 크기가 작다면 에러가 생긴다.
 	strcat_s(szname3, strlen(szName) + strlen(szName2)+1, szName2);//두 문자열 길이 + 널문자 1개크기 만금 영역 지정,
-	cout << szname3 << endl;
+	cout << szname3 << endl; //포인터로 주소값을 가지고 있기에 변동된 값 읽어옴.ㄴ
 	//근데 이럴거면 애초에 그냥 앞에 배열 크기를 쥰내게 크게 해서 sizeof를 쓰는 게 편하다.
 }
