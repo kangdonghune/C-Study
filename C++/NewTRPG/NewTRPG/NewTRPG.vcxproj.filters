@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\00.Main">
+      <UniqueIdentifier>{71df114e-71ac-4840-9ed4-ab5ac13f1844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.default">
+      <UniqueIdentifier>{de676d8a-8241-4707-934b-c20e60f3c084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Object">
+      <UniqueIdentifier>{e7f143cf-328f-4cec-b6fe-5d4aa9f1db88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Object\00.Player">
+      <UniqueIdentifier>{065d649e-4d67-4afe-b69d-47a65ec19b26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Object\01.Monster">
+      <UniqueIdentifier>{3d18a3d8-a808-4cc2-9c81-638dab5b7160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\99.default\static">
+      <UniqueIdentifier>{6f265222-4090-4c0b-b540-251de9b230df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Field">
+      <UniqueIdentifier>{28376216-8ffc-4717-b490-03cf253eb868}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.Object\02.Item">
+      <UniqueIdentifier>{4bbf1fa5-d95f-42bf-9728-92d71bcc25c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04.Inventory">
+      <UniqueIdentifier>{19ea8c3d-69fd-40bb-94b9-0840cea1801e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Field\03.Shop">
+      <UniqueIdentifier>{a35ab78d-e390-492f-b1d2-4b6d940a1906}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\01.Object\00.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>소스 파일\99.default</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>소스 파일\01.Object\01.Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>소스 파일\99.default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>소스 파일\99.default</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Object.h">
+      <Filter>소스 파일\01.Object</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Static.h">
+      <Filter>소스 파일\99.default\static</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>소스 파일\02.Field</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>소스 파일\00.Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>소스 파일\01.Object\02.Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Shop.h">
+      <Filter>소스 파일\02.Field\03.Shop</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>소스 파일\99.default</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>소스 파일\04.Inventory</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\01.Object\00.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>소스 파일\01.Object\01.Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="C_Object.cpp">
+      <Filter>소스 파일\01.Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>소스 파일\02.Field</Filter>
+    </ClCompile>
+    <ClCompile Include="C_Static.cpp">
+      <Filter>소스 파일\99.default\static</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일\99.default</Filter>
+    </ClCompile>
+    <ClCompile Include="NewTRPG.cpp">
+      <Filter>소스 파일\99.default</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일\00.Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>소스 파일\01.Object\02.Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Shop.cpp">
+      <Filter>소스 파일\02.Field\03.Shop</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>소스 파일\04.Inventory</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>소스 파일\99.default</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

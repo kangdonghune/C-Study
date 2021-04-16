@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일\Field_h">
+      <UniqueIdentifier>{89a657c5-f8ec-4fc5-afa0-b758a0c006a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Field">
+      <UniqueIdentifier>{4e82013d-b0ee-4e32-b95e-f3f505f4727d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Player">
+      <UniqueIdentifier>{8b2edfd7-1d38-432e-b84c-7d43e52fc691}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Store_h">
+      <UniqueIdentifier>{81bbeef0-66a2-470e-8c31-2b009c4597aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Monster_h">
+      <UniqueIdentifier>{e312ea10-003c-4703-a004-cd412764d01f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Player_h">
+      <UniqueIdentifier>{26098382-5b3f-49d7-a789-e01a5dbaca69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Item_h">
+      <UniqueIdentifier>{cd014a8c-3ff7-48ce-bd3e-5116a928bd8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\item">
+      <UniqueIdentifier>{07118082-c00f-4656-b6cc-2ef8ceeebf19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Monster">
+      <UniqueIdentifier>{74a34624-ffc3-4f51-b987-0eee594d2439}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\item\Equipment">
+      <UniqueIdentifier>{bdb6ce5a-e95a-4238-8761-38f63e4008a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\item\Expendables">
+      <UniqueIdentifier>{4352f0f9-9d48-4317-80d5-6f163c243fd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Item_h\Equipment_h">
+      <UniqueIdentifier>{96140da9-de1a-4a0d-a6ca-648f66ee8083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Item_h\Expendables_h">
+      <UniqueIdentifier>{6113ff81-003c-459a-aeb1-94063adfd2de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\미리컴파일된헤더">
+      <UniqueIdentifier>{f1c87674-d42e-43da-92e8-0d74c5954b65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Store">
+      <UniqueIdentifier>{34ab6e6a-cdaa-4b2b-b72b-5c7f0e8b800d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainGame.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Lobby.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>헤더 파일\Monster_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Slime.h">
+      <Filter>헤더 파일\Monster_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Skelleton.h">
+      <Filter>헤더 파일\Monster_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Orc.h">
+      <Filter>헤더 파일\Monster_h</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일\미리컴파일된헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>헤더 파일\미리컴파일된헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일\미리컴파일된헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>헤더 파일\미리컴파일된헤더</Filter>
+    </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>헤더 파일\Field_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Easy.h">
+      <Filter>헤더 파일\Field_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Hard.h">
+      <Filter>헤더 파일\Field_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Normal.h">
+      <Filter>헤더 파일\Field_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Wariior.h">
+      <Filter>헤더 파일\Player_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Thief.h">
+      <Filter>헤더 파일\Player_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>헤더 파일\Player_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Mage.h">
+      <Filter>헤더 파일\Player_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>헤더 파일\Item_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Equipment.h">
+      <Filter>헤더 파일\Item_h\Equipment_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Sword.h">
+      <Filter>헤더 파일\Item_h\Equipment_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Posion.h">
+      <Filter>헤더 파일\Item_h\Expendables_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Store.h">
+      <Filter>헤더 파일\Store_h</Filter>
+    </ClInclude>
+    <ClInclude Include="MasterStore.h">
+      <Filter>헤더 파일\Store_h</Filter>
+    </ClInclude>
+    <ClInclude Include="NormalStore.h">
+      <Filter>헤더 파일\Store_h</Filter>
+    </ClInclude>
+    <ClInclude Include="BeginnerStore.h">
+      <Filter>헤더 파일\Store_h</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="0402_과제_TRPG.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MainGame.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Lobby.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Slime.cpp">
+      <Filter>소스 파일\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Skelleton.cpp">
+      <Filter>소스 파일\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Orc.cpp">
+      <Filter>소스 파일\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>소스 파일\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Hard.cpp">
+      <Filter>소스 파일\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Normal.cpp">
+      <Filter>소스 파일\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Mage.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Thief.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Wariior.cpp">
+      <Filter>소스 파일\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>소스 파일\Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Easy.cpp">
+      <Filter>소스 파일\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>소스 파일\item</Filter>
+    </ClCompile>
+    <ClCompile Include="Equipment.cpp">
+      <Filter>소스 파일\item\Equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="Sword.cpp">
+      <Filter>소스 파일\item\Equipment</Filter>
+    </ClCompile>
+    <ClCompile Include="Posion.cpp">
+      <Filter>소스 파일\item\Expendables</Filter>
+    </ClCompile>
+    <ClCompile Include="Store.cpp">
+      <Filter>소스 파일\Store</Filter>
+    </ClCompile>
+    <ClCompile Include="NormalStore.cpp">
+      <Filter>소스 파일\Store</Filter>
+    </ClCompile>
+    <ClCompile Include="MasterStore.cpp">
+      <Filter>소스 파일\Store</Filter>
+    </ClCompile>
+    <ClCompile Include="BeginnerStore.cpp">
+      <Filter>소스 파일\Store</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

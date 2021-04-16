@@ -34,6 +34,8 @@ int main()
 	cout << &doubleArray << endl;
 	cout << &doubleArray[0] << endl;
 	cout << &doubleArray[0][0] << endl;
+
+	
 }
 
 void show(int arr2D[][3]) //이런 식으로 매개 변수로 받아 올 수 있는데 반드시 열의 개수는 명시해줘야 한다.
