@@ -81,6 +81,7 @@ int main()
 	pTest->LevelUp();
 	C_Obj* pObj2 = &tUnit;
 	pObj2->Render();
+	printf("% d", 10);
     return 0;
 
 

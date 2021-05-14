@@ -5,6 +5,7 @@
 #include "User.h"
 
 int main()
+
 {
 	//CPlayer tPlayer; //자식을 생성하게 되면 부모 생성자를 먼저 호출한 뒤 자식 생성자가 호출 된다. 소멸할 때는 자식이 먼저 소멸되고 이후 부모가 소멸된다.
 	//tPlayer.Render(); //자식이 부모의 멤버 변수를 가져다 쓴다.

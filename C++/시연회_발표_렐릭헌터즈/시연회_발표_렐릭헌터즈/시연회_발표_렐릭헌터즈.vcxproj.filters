@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\00.main">
+      <UniqueIdentifier>{81449822-23d0-4fec-b5eb-19883dfe4f19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\099.default">
+      <UniqueIdentifier>{f7cb4de3-4d61-4822-8576-ea87f378db8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\098.header">
+      <UniqueIdentifier>{dde4bad8-d1c7-4151-b8ad-8e2d9b936cd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object">
+      <UniqueIdentifier>{d5196a7a-c68b-4100-bb82-da5b6ab7e0e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\096.bitmap">
+      <UniqueIdentifier>{c232247c-bb76-4581-8993-834da8d191f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\096.bitmap\00.bitmapmaneger">
+      <UniqueIdentifier>{5bb2269d-f663-48b4-a817-cfd7b1070498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\00.maneger">
+      <UniqueIdentifier>{cceb94a0-aeec-4b15-8bb3-7c500f853803}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\01.player">
+      <UniqueIdentifier>{12057065-3e63-4b92-93bc-e65a489c07a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\01.player\00.playergun">
+      <UniqueIdentifier>{c976569a-9f11-461c-8f45-4f22b89b50e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\02.Bullet">
+      <UniqueIdentifier>{6c087371-ff82-41fc-b61a-d968cc324874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\02.Bullet\00.Player_bullet">
+      <UniqueIdentifier>{e82d25a6-4488-4a63-b183-81913df2badd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.mapobject">
+      <UniqueIdentifier>{361e4ecb-24d7-49ab-be7b-016166f90129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Scene">
+      <UniqueIdentifier>{0a842e1a-d21f-4b57-89cd-6b6fa1a2da45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.mapobject\00.Tile">
+      <UniqueIdentifier>{0a6fba6d-54d3-425e-a807-b51576b1e3fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.mapobject\01.Wall">
+      <UniqueIdentifier>{22489463-f3ec-4bd0-b7ec-b027d4ee76e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\03.Monster">
+      <UniqueIdentifier>{f67f63f2-3cd7-4006-8dfd-41b37036d29d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="시연회_발표_렐릭헌터즈.h">
+      <Filter>소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>소스 파일\00.main</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>소스 파일\098.header</Filter>
+    </ClInclude>
+    <ClInclude Include="extern.h">
+      <Filter>소스 파일\098.header</Filter>
+    </ClInclude>
+    <ClInclude Include="enum.h">
+      <Filter>소스 파일\098.header</Filter>
+    </ClInclude>
+    <ClInclude Include="struct.h">
+      <Filter>소스 파일\098.header</Filter>
+    </ClInclude>
+    <ClInclude Include="function.h">
+      <Filter>소스 파일\098.header</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>소스 파일\01.game-object</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\01.game-object\01.player</Filter>
+    </ClInclude>
+    <ClInclude Include="C_Bitmap.h">
+      <Filter>소스 파일\096.bitmap</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapManeger.h">
+      <Filter>소스 파일\096.bitmap\00.bitmapmaneger</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectManeger.h">
+      <Filter>소스 파일\01.game-object\00.maneger</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>소스 파일\01.game-object\01.player\00.playergun</Filter>
+    </ClInclude>
+    <ClInclude Include="Player_Bullet.h">
+      <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="시연회_발표_렐릭헌터즈.cpp">
+      <Filter>소스 파일\099.default</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일\099.default</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일\00.main</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\01.game-object</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\01.game-object\01.player</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapManeger.cpp">
+      <Filter>소스 파일\096.bitmap\00.bitmapmaneger</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManeger.cpp">
+      <Filter>소스 파일\01.game-object\00.maneger</Filter>
+    </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>소스 파일\01.game-object\01.player\00.playergun</Filter>
+    </ClCompile>
+    <ClCompile Include="C_Bitmap.cpp">
+      <Filter>소스 파일\096.bitmap</Filter>
+    </ClCompile>
+    <ClCompile Include="Player_Bullet.cpp">
+      <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="시연회_발표_렐릭헌터즈.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="시연회_발표_렐릭헌터즈.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>소스 파일\099.default</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

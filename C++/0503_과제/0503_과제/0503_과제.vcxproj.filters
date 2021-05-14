@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="소스 파일\099.Default">
+      <UniqueIdentifier>{06f0e53b-c662-4821-b00f-c9b198bc1a57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\098.Header">
+      <UniqueIdentifier>{1c4a6c6e-4897-4ebd-9fe9-b97ebd68b78b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\00.Main">
+      <UniqueIdentifier>{37b096e7-4f9c-4cf9-809b-0aff8180ce84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.GameObject">
+      <UniqueIdentifier>{ea7c4ccf-f1eb-40f5-88b1-faf1051a3e28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.Maneger">
+      <UniqueIdentifier>{7610f757-6740-43cf-b3c9-1851b392c088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.GameObject\00.Player">
+      <UniqueIdentifier>{be36bba4-12e3-4c9c-b54b-e82b3508fc63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="0503_과제.h">
+      <Filter>소스 파일\099.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>소스 파일\099.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>소스 파일\099.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>소스 파일\099.Default</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Extern.h">
+      <Filter>소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>소스 파일\01.GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>소스 파일\01.GameObject\00.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>소스 파일\00.Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectManeger.h">
+      <Filter>소스 파일\02.Maneger</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="0503_과제.cpp">
+      <Filter>소스 파일\099.Default</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일\099.Default</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\01.GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>소스 파일\01.GameObject\00.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>소스 파일\00.Main</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectManeger.cpp">
+      <Filter>소스 파일\02.Maneger</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="0503_과제.rc">
+      <Filter>리소스 파일</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="small.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="0503_과제.ico">
+      <Filter>리소스 파일</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

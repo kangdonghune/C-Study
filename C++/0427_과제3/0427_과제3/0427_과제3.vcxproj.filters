@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일\099.default">
+      <UniqueIdentifier>{b61adfdb-7011-414d-a98d-8080dfa13949}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\098.Header">
+      <UniqueIdentifier>{2284072e-3ee3-49bd-8c3a-a944386bcb96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\00.Main">
+      <UniqueIdentifier>{03a92b2d-8e1a-454e-a5ef-20ce6547a919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\01.GameObject">
+      <UniqueIdentifier>{c8fcc9dc-f29b-4a21-b552-5af850d455b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\02.Maneger">
+      <UniqueIdentifier>{a7e7587c-6dbf-4522-903e-78513e08d7d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\01.GameObject\00.Player">
+      <UniqueIdentifier>{d6d8e883-0837-40e9-986a-73e1ec739b6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\01.GameObject\01.Bullet">
+      <UniqueIdentifier>{7b0de6c3-22e9-4225-872d-c46a2b33b5eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\01.GameObject\02.Enemy">
+      <UniqueIdentifier>{0fb02afb-a71f-4277-b710-5fdcd1e7118e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\01.GameObject\03.Shield">
+      <UniqueIdentifier>{34aca949-9fb0-49f3-b7ae-d762f86d608f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\01.GameObject\04.GuideBullet">
+      <UniqueIdentifier>{5952d4fc-1d0e-44d4-9051-b8babb536996}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameObject.h">
+      <Filter>리소스 파일\01.GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Main.h">
+      <Filter>리소스 파일\00.Main</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="0427_과제3.h">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>리소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>리소스 파일\01.GameObject\00.Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enum.h">
+      <Filter>리소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>리소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Extern.h">
+      <Filter>리소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>리소스 파일\01.GameObject\01.Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Shield.h">
+      <Filter>리소스 파일\01.GameObject\03.Shield</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>리소스 파일\01.GameObject\02.Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="GuideBullet.h">
+      <Filter>리소스 파일\01.GameObject\04.GuideBullet</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>리소스 파일\01.GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>리소스 파일\00.Main</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClCompile>
+    <ClCompile Include="0427_과제3.cpp">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>리소스 파일\01.GameObject\00.Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>리소스 파일\01.GameObject\01.Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>리소스 파일\01.GameObject\02.Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Shield.cpp">
+      <Filter>리소스 파일\01.GameObject\03.Shield</Filter>
+    </ClCompile>
+    <ClCompile Include="GuideBullet.cpp">
+      <Filter>리소스 파일\01.GameObject\04.GuideBullet</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="0427_과제3.ico">
+      <Filter>리소스 파일\099.default</Filter>
+    </Image>
+    <Image Include="small.ico">
+      <Filter>리소스 파일\099.default</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="0427_과제3.rc">
+      <Filter>리소스 파일\099.default</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt">
+      <Filter>리소스 파일\099.default</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

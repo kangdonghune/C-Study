@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일\099.default">
+      <UniqueIdentifier>{87c22974-c452-44ac-b495-ae1dbf08fec9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\00.MainApp">
+      <UniqueIdentifier>{95401e4e-2b17-459a-9d2b-f9d73572d3a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\01.GameObj">
+      <UniqueIdentifier>{29c8207a-fa22-449e-a5e8-0e824ba07842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\098.Header">
+      <UniqueIdentifier>{d4c4ca4f-ac71-44fa-a221-a1c535afdb0e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="targetver.h">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="0419_과제.h">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClInclude>
+    <ClInclude Include="MainApp.h">
+      <Filter>리소스 파일\00.MainApp</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObj.h">
+      <Filter>리소스 파일\01.GameObj</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>리소스 파일\01.GameObj</Filter>
+    </ClInclude>
+    <ClInclude Include="Extern.h">
+      <Filter>리소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>리소스 파일\098.Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Struct.h">
+      <Filter>리소스 파일\098.Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="0419_과제.cpp">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>리소스 파일\099.default</Filter>
+    </ClCompile>
+    <ClCompile Include="MainApp.cpp">
+      <Filter>리소스 파일\00.MainApp</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObj.cpp">
+      <Filter>리소스 파일\01.GameObj</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>리소스 파일\01.GameObj</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="0419_과제.ico">
+      <Filter>리소스 파일\099.default</Filter>
+    </Image>
+    <Image Include="small.ico">
+      <Filter>리소스 파일\099.default</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="0419_과제.rc">
+      <Filter>리소스 파일\099.default</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
