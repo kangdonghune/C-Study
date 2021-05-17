@@ -5,6 +5,7 @@
 #include "Gun.h"
 #include "GameObjectManeger.h"
 #include "Player_Bullet.h"
+#include "ScrollManeger.h"
 CPlayer::CPlayer()
 {
 }
@@ -24,6 +25,25 @@ CGameObject * CPlayer::Create()
 		return pInstance;
 	}
 	return pInstance;
+}
+
+void CPlayer::IsOffset()
+{
+	float fScrollY = CScrollManeger::Get_ScrollY();
+	float fScrollX = CScrollManeger::Get_ScrollX();
+	float X = m_tInfo.fX + fScrollX;
+	float Y = m_tInfo.fY + fScrollY;
+	if ((WINCX >> 1) + 200 < X)
+		CScrollManeger::Set_ScrollX(-m_tInfo.fSpeed);
+	if ((WINCX >> 1) - 200 > X)
+		CScrollManeger::Set_ScrollX(m_tInfo.fSpeed);
+	if ((WINCY >> 1) + 100 < Y)
+		CScrollManeger::Set_ScrollY(-m_tInfo.fSpeed);
+	if ((WINCY >> 1) - 100 > Y)
+		CScrollManeger::Set_ScrollY(m_tInfo.fSpeed);
+
+	int i = 0;
+	int j = 0;
 }
 
 void CPlayer::Idle()
@@ -57,7 +77,8 @@ void CPlayer::Idle()
 	}
 	if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
 	{
-		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(OBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
+		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
+		m_iOldState = m_iState;
 		m_iState = MELEE;
 		m_tAni.iStart = 0;
 	}
@@ -96,7 +117,8 @@ void CPlayer::Walk()
 	}
 	if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
 	{
-		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(OBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
+		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
+		m_iOldState = m_iState;
 		m_iState = MELEE;
 		m_tAni.iStart = 0;
 		return;
@@ -112,7 +134,6 @@ void CPlayer::Walk()
 void CPlayer::Run()
 {
 	bool bIsChange = false;
-
 
 	if (!(GetAsyncKeyState(VK_SHIFT) & 0x8000))
 	{
@@ -145,9 +166,8 @@ void CPlayer::Run()
 
 	if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
 	{
-		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(OBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
-		m_iState = MELEE;
-		m_tAni.iStart = 0;
+		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
+
 		return;
 	}
 
@@ -156,34 +176,55 @@ void CPlayer::Run()
 		m_iState = IDLE;
 		m_tAni.iStart = 0;
 	}
+
+
 }
 
 void CPlayer::Melee()
 {
-	static DWORD AttakTIme = GetTickCount();
+	bool bIsChange = false;
+
+	if (m_tAni.iStart == m_tAni.iEnd)
+	{
+		m_iState = IDLE;
+		m_tAni.iStart = 0;
+	}
+
+	if (GetAsyncKeyState(VK_LBUTTON) & 0x0001)
+	{
+		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
+		m_iState = m_iOldState;
+		m_tAni.iStart = 0;
+		return;
+	}
 
 	if (GetAsyncKeyState('A') & 0x8000)
 	{
-		m_tInfo.fX -= m_tInfo.fSpeed;
+		m_tInfo.fX -= m_tInfo.fSpeed * 0.7f;
+		bIsChange = true;
 	}
 
 	if (GetAsyncKeyState('D') & 0x8000)
 	{
-		m_tInfo.fX += m_tInfo.fSpeed;
+		m_tInfo.fX += m_tInfo.fSpeed* 0.7f;
+		bIsChange = true;
 	}
 	if (GetAsyncKeyState('S') & 0x8000)
 	{
-		m_tInfo.fY += m_tInfo.fSpeed;
+		m_tInfo.fY += m_tInfo.fSpeed* 0.7f;
+		bIsChange = true;
 	}
 	if (GetAsyncKeyState('W') & 0x8000)
 	{
-		m_tInfo.fY -= m_tInfo.fSpeed;
+		m_tInfo.fY -= m_tInfo.fSpeed* 0.7f;
+		bIsChange = true;
 	}
-	if (AttakTIme + 100 < GetTickCount())
+
+	if (GetAsyncKeyState(VK_SHIFT) & 0x8000)
 	{
-		AttakTIme = GetTickCount();
-		m_iState = IDLE;
+		m_iState = RUN;
 		m_tAni.iStart = 0;
+		return;
 	}
 }
 
@@ -226,7 +267,7 @@ int CPlayer::Ready_GameObject()
 	m_tInfo.fSpeed = PLAYER_SPEED;
 	m_tInfo.fAngle = 0;
 	m_idir = 1;
-	if (!(CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(OBJECT::GUN, CGun::Create(this))))
+	if (!(CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GUN, CGun::Create(this))))
 	return Function_Fail;
 
 	

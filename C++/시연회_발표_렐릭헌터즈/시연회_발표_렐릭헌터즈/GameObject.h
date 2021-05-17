@@ -25,6 +25,7 @@ protected:
 	G_INFO m_tInfo;
 	RECT m_Rc;
 	unsigned int m_iState;
+	unsigned int m_iOldState;
 	ANIINFO m_tAni;
 	POINT m_tMouse;
 	HDC m_ObjectDc;

@@ -31,9 +31,9 @@ void CGameObjectManeger::Destroy_GameObjectManeger()
 	}
 }
 
-int CGameObjectManeger::Add_GameObject(OBJECT::Object Num, CGameObject * pObject)
+int CGameObjectManeger::Add_GameObject(GAMEOBJECT::Object Num, CGameObject * pObject)
 {
-	if (nullptr == pObject || Num >= OBJECT::END)
+	if (nullptr == pObject || Num >= GAMEOBJECT::END)
 		return Function_Fail;
 
 	m_listGameObject[Num].emplace_back(pObject);
@@ -49,7 +49,7 @@ int CGameObjectManeger::Ready_GameObjectManeger()
 
 int CGameObjectManeger::Render_GameObjectManeger(HDC hdc)
 {
-	for (int i = 0; i < OBJECT::END; ++i)
+	for (int i = 0; i < GAMEOBJECT::END; ++i)
 	{
 		for (auto& iter = m_listGameObject[i].begin(); iter != m_listGameObject[i].end(); ++iter)
 		{
@@ -61,7 +61,7 @@ int CGameObjectManeger::Render_GameObjectManeger(HDC hdc)
 
 int CGameObjectManeger::Update_GameObjectManeger()
 {
-	for (int i = 0; i < OBJECT::END; i++)
+	for (int i = 0; i < GAMEOBJECT::END; i++)
 	{
 		for (auto& iter = m_listGameObject[i].begin(); iter != m_listGameObject[i].end();)
 		{
@@ -84,7 +84,7 @@ int CGameObjectManeger::Update_GameObjectManeger()
 
 int CGameObjectManeger::LateUpdate_GameObjectManeger()
 {
-	for (int i = 0; i < OBJECT::END; ++i)
+	for (int i = 0; i < GAMEOBJECT::END; ++i)
 	{
 		for (auto& iter = m_listGameObject[i].begin(); iter != m_listGameObject[i].end(); ++iter)
 		{
@@ -96,7 +96,7 @@ int CGameObjectManeger::LateUpdate_GameObjectManeger()
 
 int CGameObjectManeger::Release_GameObjectManeger()
 {
-	for (int i = 0; i < OBJECT::END; i++)
+	for (int i = 0; i < GAMEOBJECT::END; i++)
 	{
 		for (auto& pObject : m_listGameObject[i])
 		{
@@ -107,9 +107,9 @@ int CGameObjectManeger::Release_GameObjectManeger()
 	return Function_Pass;
 }
 
-CGameObject * CGameObjectManeger::Get_Target(OBJECT::Object Num)
+CGameObject * CGameObjectManeger::Get_Target(GAMEOBJECT::Object Num)
 {
-	if (m_listGameObject[Num].empty() || Num >= OBJECT::END)
+	if (m_listGameObject[Num].empty() || Num >= GAMEOBJECT::END)
 		return nullptr;
 
 	CGameObject* pTarget = m_listGameObject[Num].front();

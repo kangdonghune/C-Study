@@ -36,7 +36,7 @@ int CPlayer_Bullet::Ready_GameObject()
 	m_tInfo.fY = m_pTarget->GetInfo()->fY + GUN_ICY;
 	m_tInfo.iCX = Bullet_ICX;
 	m_tInfo.iCY = Bullet_ICY;
-	m_tInfo.fSpeed = 30.f;
+	m_tInfo.fSpeed = 50.f;
 	m_tInfo.iDamege = 10;
 	
 	return Function_Pass;

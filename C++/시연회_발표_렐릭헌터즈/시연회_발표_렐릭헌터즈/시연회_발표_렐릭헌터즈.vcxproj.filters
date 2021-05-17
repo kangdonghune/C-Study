@@ -51,11 +51,35 @@
     <Filter Include="소스 파일\02.mapobject\00.Tile">
       <UniqueIdentifier>{0a6fba6d-54d3-425e-a807-b51576b1e3fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\02.mapobject\01.Wall">
-      <UniqueIdentifier>{22489463-f3ec-4bd0-b7ec-b027d4ee76e5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\01.game-object\03.Monster">
       <UniqueIdentifier>{f67f63f2-3cd7-4006-8dfd-41b37036d29d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\04.Scroll">
+      <UniqueIdentifier>{b9e1cffb-1d59-43dd-b894-7a806b027f13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.mapobject\Maneger">
+      <UniqueIdentifier>{79cef4de-1a23-4060-87b5-98db545f270b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\097.Collider_Maneger">
+      <UniqueIdentifier>{cce95b84-2a66-4b2e-bddc-b6d077b91dc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.mapobject\01,Celling">
+      <UniqueIdentifier>{22489463-f3ec-4bd0-b7ec-b027d4ee76e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Scene\Maneger">
+      <UniqueIdentifier>{cc1d5314-7350-430b-848e-6b29ad4d8e79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Scene\00.Edit">
+      <UniqueIdentifier>{9fe37309-8839-41ec-8d5d-82afe26d96bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Scene\01.Stage">
+      <UniqueIdentifier>{706b1301-2fd1-49ab-a6c6-9768c29f3665}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Scene\02.MainMenu">
+      <UniqueIdentifier>{d54d05f0-ab34-4a0c-8432-4299e82dd3d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.mapobject\02.Wall">
+      <UniqueIdentifier>{03ae99e9-c3fa-4a3b-81c7-483f2e9f35e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -89,9 +113,6 @@
     <ClInclude Include="function.h">
       <Filter>소스 파일\098.header</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>소스 파일\01.game-object</Filter>
-    </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>소스 파일\01.game-object\01.player</Filter>
     </ClInclude>
@@ -109,6 +130,42 @@
     </ClInclude>
     <ClInclude Include="Player_Bullet.h">
       <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>소스 파일\02.mapobject\00.Tile</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObject.h">
+      <Filter>소스 파일\02.mapobject</Filter>
+    </ClInclude>
+    <ClInclude Include="MapObjectManeger.h">
+      <Filter>소스 파일\02.mapobject\Maneger</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>소스 파일\01.game-object</Filter>
+    </ClInclude>
+    <ClInclude Include="Celling.h">
+      <Filter>소스 파일\02.mapobject\01,Celling</Filter>
+    </ClInclude>
+    <ClInclude Include="ScrollManeger.h">
+      <Filter>소스 파일\04.Scroll</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\03.Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>소스 파일\03.Scene\00.Edit</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManeger.h">
+      <Filter>소스 파일\03.Scene\Maneger</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>소스 파일\03.Scene\01.Stage</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>소스 파일\03.Scene\02.MainMenu</Filter>
+    </ClInclude>
+    <ClInclude Include="Wall.h">
+      <Filter>소스 파일\02.mapobject\02.Wall</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +198,39 @@
     </ClCompile>
     <ClCompile Include="Player_Bullet.cpp">
       <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>소스 파일\02.mapobject\00.Tile</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObject.cpp">
+      <Filter>소스 파일\02.mapobject</Filter>
+    </ClCompile>
+    <ClCompile Include="MapObjectManeger.cpp">
+      <Filter>소스 파일\02.mapobject\Maneger</Filter>
+    </ClCompile>
+    <ClCompile Include="Celling.cpp">
+      <Filter>소스 파일\02.mapobject\01,Celling</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일\03.Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManeger.cpp">
+      <Filter>소스 파일\03.Scene\Maneger</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>소스 파일\03.Scene\00.Edit</Filter>
+    </ClCompile>
+    <ClCompile Include="ScrollManeger.cpp">
+      <Filter>소스 파일\04.Scroll</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>소스 파일\03.Scene\01.Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>소스 파일\03.Scene\02.MainMenu</Filter>
+    </ClCompile>
+    <ClCompile Include="Wall.cpp">
+      <Filter>소스 파일\02.mapobject\02.Wall</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

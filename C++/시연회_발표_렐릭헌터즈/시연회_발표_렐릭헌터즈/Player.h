@@ -12,6 +12,7 @@ public:
 	static CGameObject* Create();
 
 public:
+	void IsOffset();
 	void Idle();
 	void Walk();
 	void Run();

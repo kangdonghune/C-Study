@@ -11,9 +11,9 @@ public:
 	static void Destroy_GameObjectManeger();
 
 public:
-	int Add_GameObject(OBJECT::Object Num, CGameObject* pObject);
-	const list<CGameObject*> GetList(OBJECT::Object Num) { return m_listGameObject[Num]; }
-	list<CGameObject*> SetList(OBJECT::Object Num) { return m_listGameObject[Num]; }
+	int Add_GameObject(GAMEOBJECT::Object Num, CGameObject* pObject);
+	const list<CGameObject*> GetList(GAMEOBJECT::Object Num) { return m_listGameObject[Num]; }
+	list<CGameObject*> SetList(GAMEOBJECT::Object Num) { return m_listGameObject[Num]; }
 public:
 	int Ready_GameObjectManeger();
 	int Render_GameObjectManeger(HDC hdc);
@@ -21,9 +21,9 @@ public:
 	int LateUpdate_GameObjectManeger();
 	int Release_GameObjectManeger();
 public:
-	CGameObject* Get_Target(OBJECT::Object Num);
+	CGameObject* Get_Target(GAMEOBJECT::Object Num);
 private:
 	static CGameObjectManeger* m_pInstance;
-	list<CGameObject*> m_listGameObject[OBJECT::END];
+	list<CGameObject*> m_listGameObject[GAMEOBJECT::END];
 };
 

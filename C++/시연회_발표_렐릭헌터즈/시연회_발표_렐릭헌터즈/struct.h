@@ -19,6 +19,10 @@ typedef struct tag_MapObjInfo
 	float fY;
 	int iCX;
 	int iCY;
+	MAPOBJECT::Object ObjType;
+	MAPOBJECTTYPE::TYPE Objfeature;
+	int iCellingNum;
+	int iWallNum;
 }M_INFO;
 
 

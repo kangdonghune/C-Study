@@ -96,6 +96,12 @@ int CBitmapManeger::Ready_BitmapManeger()
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_bullet", L"../Image/Player_bullet.bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"BackBuffer", L"../Image/BackGround.bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"DoubleBuff", L"../Image/BackGround.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"floor_desert", L"../Image/floor_desert.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Ceiling_desert", L"../Image/desert_tileset.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"desert_wall", L"../Image/desert_wall.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Celling_back", L"../Image/Celling_back.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"menu_main", L"../Image/menu_main.bmp");
+
 	return Function_Pass;	
 }
 

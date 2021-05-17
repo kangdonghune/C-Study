@@ -22,11 +22,24 @@
 #define PLAYER_ICY 94
 #define PLAYER_SPEED 10.0f
 
-//รั INFO
+//gameobject INFO
 #define GUN_ICX 60
 #define GUN_ICY 24
 #define Bullet_ICX 46
 #define Bullet_ICY 30
-//color
 
+//mapobject INFO
+#define TILECX 128
+#define TILECY 128
+#define Celling_CX  64
+#define Celling_CY  64
+#define Wall_SideCX  32
+#define Wall_SideCY  64
+#define Celling_ImgCX  144
+#define Celling_ImgCY  144
+#define Wall_SideImgCX  64
+#define Wall_SideImgCY  128
+
+
+//color
 #define bmi_BackGround RGB(255, 0, 255)

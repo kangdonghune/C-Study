@@ -65,9 +65,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 		if (dwOldTime + 20 < GetTickCount())
 		{
-			pMain->Render_Main();
 			pMain->Update_Main();
-			pMain->LateUpdate_Main();		
+			pMain->LateUpdate_Main();
+			pMain->Render_Main();
 			dwOldTime = GetTickCount();
 		}
 	}

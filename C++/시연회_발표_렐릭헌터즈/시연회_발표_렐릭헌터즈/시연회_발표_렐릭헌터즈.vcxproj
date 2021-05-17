@@ -148,6 +148,7 @@
     <ClInclude Include="BitmapManeger.h" />
     <ClInclude Include="C_Bitmap.h" />
     <ClInclude Include="define.h" />
+    <ClInclude Include="Editor.h" />
     <ClInclude Include="enum.h" />
     <ClInclude Include="extern.h" />
     <ClInclude Include="function.h" />
@@ -155,29 +156,50 @@
     <ClInclude Include="GameObjectManeger.h" />
     <ClInclude Include="Gun.h" />
     <ClInclude Include="Main.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="MapObject.h" />
+    <ClInclude Include="MapObjectManeger.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Player_Bullet.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneManeger.h" />
+    <ClInclude Include="ScrollManeger.h" />
+    <ClInclude Include="Stage.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="struct.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="Celling.h" />
+    <ClInclude Include="Wall.h" />
     <ClInclude Include="시연회_발표_렐릭헌터즈.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BitmapManeger.cpp" />
     <ClCompile Include="C_Bitmap.cpp" />
+    <ClCompile Include="Editor.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectManeger.cpp" />
     <ClCompile Include="Gun.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="MapObject.cpp" />
+    <ClCompile Include="MapObjectManeger.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Player_Bullet.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneManeger.cpp" />
+    <ClCompile Include="ScrollManeger.cpp" />
+    <ClCompile Include="Stage.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="Celling.cpp" />
+    <ClCompile Include="Wall.cpp" />
     <ClCompile Include="시연회_발표_렐릭헌터즈.cpp" />
   </ItemGroup>
   <ItemGroup>
