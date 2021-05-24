@@ -34,7 +34,7 @@ void CGameObject::SetDir()
 
 void CGameObject::UpdateRect()
 {
-	m_Rc.left	 = static_cast<LONG>(m_tInfo.fX - m_tInfo.iCX / 2)   ;
+	m_Rc.left	 = static_cast<LONG>(m_tInfo.fX - m_tInfo.iCX / 2) ;
 	m_Rc.top	 = static_cast<LONG>(m_tInfo.fY - m_tInfo.iCY / 2) ;
 	m_Rc.right	 = static_cast<LONG>(m_tInfo.fX + m_tInfo.iCX / 2) ;
 	m_Rc.bottom  = static_cast<LONG>(m_tInfo.fY + m_tInfo.iCY / 2) ;

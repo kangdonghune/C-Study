@@ -42,14 +42,22 @@ int CPlayer_Bullet::Ready_GameObject()
 	case ITEM::PISTOL:
 		m_hDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Pistol_Bullet");
 		m_tInfo.fAngle = m_pTarget->GetInfo()->fAngle + RandomDir*5;
-		m_tInfo.fX = m_pTarget->GetInfo()->fX + cosf(m_tInfo.fAngle / RADIAN)*PISTOL_C/2;
-		m_tInfo.fY = m_pTarget->GetInfo()->fY + sinf(m_tInfo.fAngle / RADIAN)*PISTOL_C /2;
+		m_tInfo.fX = m_pTarget->GetInfo()->fX + cosf(m_tInfo.fAngle / RADIAN)*PISTOL_C/2 + 30;
+		m_tInfo.fY = m_pTarget->GetInfo()->fY + sinf(m_tInfo.fAngle / RADIAN)*PISTOL_C /2 + 10;
 		m_tInfo.fSpeed = 15.f;
 		m_tInfo.iCX = Pistol_bC;
 		m_tInfo.iCY = Pistol_bC;
 		m_tInfo.iDamege = 15;
 		break;
 	case ITEM::MACHINGUN:
+		m_hDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Machgun_bullet");
+		m_tInfo.fAngle = m_pTarget->GetInfo()->fAngle + RandomDir * 5;
+		m_tInfo.fX = m_pTarget->GetInfo()->fX + cosf(m_tInfo.fAngle / RADIAN)*GUN_ICX / 2 + 30;
+		m_tInfo.fY = m_pTarget->GetInfo()->fY + sinf(m_tInfo.fAngle / RADIAN)*GUN_ICY / 2 + 10;
+		m_tInfo.fSpeed = 25.f;
+		m_tInfo.iCX = Machgun_bC;
+		m_tInfo.iCY = Machgun_bC;
+		m_tInfo.iDamege = 20;
 		break;
 	case ITEM::SHOTGUN:
 		break;
@@ -58,7 +66,7 @@ int CPlayer_Bullet::Ready_GameObject()
 	default:
 		break;
 	}
-
+	UpdateRect();
 	return Function_Pass;
 }
 
