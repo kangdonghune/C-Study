@@ -54,14 +54,12 @@ int CGameObjectManeger::Ready_GameObjectManeger()
 
 int CGameObjectManeger::Render_GameObjectManeger(HDC hdc)
 {
+	
 	for (int i = 0; i < GAMEOBJECT::END; ++i)
 	{
 		for (auto& iter = m_listGameObject[i].begin(); iter != m_listGameObject[i].end(); ++iter)
 		{
-			if (GAMEOBJECT::GUN == i)
-				if((*iter)->GetTarget() == m_listGameObject[GAMEOBJECT::PLAYER].back())
-					if ((*iter) != dynamic_cast<CPlayer*>(m_listGameObject[GAMEOBJECT::PLAYER].back())->Get_MyGun())
-						continue;
+			
 			(*iter)->Render_GameObject(hdc);
 		}
 	}

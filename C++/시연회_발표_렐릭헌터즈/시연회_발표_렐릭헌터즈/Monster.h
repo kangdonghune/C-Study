@@ -22,7 +22,6 @@ protected:
 	CGameObject* m_pTarget;
 	LaserPoint m_tLaser;
 	HDC m_hMemDC;
-	CGameObject* m_pMyGun;
 	bool MoveOn;
 	DWORD RayTime;
 	DWORD RayCool;

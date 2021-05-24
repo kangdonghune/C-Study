@@ -23,7 +23,7 @@ public:
 	void SetDead() { m_iState = DEAD; }
 	void SetDemage(CGameObject* pTarget) { pTarget->SetInfo()->iHP -= m_tInfo.iDamege; }
 	CGameObject* GetTarget() { return m_pTarget; }
-
+	CGameObject* Get_MyGun() { return m_pMyGun; }
 	void UpdateRect();
 	
 	float CheckTargetDir(CGameObject* pTarget);
@@ -49,5 +49,6 @@ protected:
 	int m_idir;
 	GUNINFO m_tGunInfo;
 	CGameObject* m_pTarget;
+	CGameObject* m_pMyGun;
 };
 

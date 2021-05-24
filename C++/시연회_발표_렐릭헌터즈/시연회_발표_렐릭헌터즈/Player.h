@@ -12,7 +12,7 @@ public:
 	static CGameObject* Create();
 
 public:
-	CGameObject* Get_MyGun() { return m_pMyGun; }
+	
 	void SetGrenadeOn(bool boolvalue) { m_bGrenadeOn = boolvalue; }
 
 	void SetMyGun(CGameObject* pGun) { m_pMyGun = pGun; }
@@ -40,7 +40,7 @@ public:
 	virtual int Release_GameObject() override;
 private:
 	HDC m_ObjectDc;
-	CGameObject* m_pMyGun;
+
 	vector<CGameObject*> m_vecGuns;
 	bool m_bGrenadeOn;
 	int m_iGunNum;

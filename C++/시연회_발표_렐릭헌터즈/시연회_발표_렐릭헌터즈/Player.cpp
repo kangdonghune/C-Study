@@ -308,7 +308,9 @@ int CPlayer::Update_GameObject()
 		{
 			m_iState = READYDEAD;
 			m_tAni.iStart = 0;
-			m_pMyGun->SetDead();
+			for (auto& pGuns : m_vecGuns)
+				pGuns->SetDead();
+			m_vecGuns.clear();
 		}	
 	}
 		
@@ -404,10 +406,6 @@ int CPlayer::LateUpdate_GameObject()
 
 int CPlayer::Release_GameObject()
 {
-	if (nullptr != m_pMyGun)
-	{
-		Delete_Dynamic(m_pMyGun);
-		m_pMyGun = nullptr;
-	}
+	
 	return Function_Pass;
 }
