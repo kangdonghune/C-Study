@@ -83,10 +83,10 @@ void CTultle::Attack()
 {
 	if (m_iState == DEAD || m_iState == READYDEAD)
 		return;
-	if (dynamic_cast<CGun*>(m_pMyGun)->Get_GunInfo()->fBulletTime + dynamic_cast<CGun*>(m_pMyGun)->Get_GunInfo()->fBulletCoolTime < GetTickCount())
+	if (dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime + dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletCoolTime < GetTickCount())
 	{
 		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::MONSTER_BULLET, CPlayer_Bullet::Create(this));
-		dynamic_cast<CGun*>(m_pMyGun)->Get_GunInfo()->fBulletTime = GetTickCount();
+		dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime = GetTickCount();
 	}
 }
 
