@@ -27,6 +27,7 @@ public:
 	void UpdateRect();
 	void SetHold() { m_iState = HOLD; }
 	void SetGunName(ITEM::Name Name) { m_tGunInfo.Name = Name; }
+	GUNINFO& SetGunInfo() { return m_tGunInfo; }
 
 
 	float CheckTargetDir(CGameObject* pTarget);

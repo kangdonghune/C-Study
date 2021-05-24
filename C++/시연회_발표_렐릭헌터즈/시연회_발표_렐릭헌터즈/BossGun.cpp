@@ -47,7 +47,7 @@ int BossGun::Ready_GameObject()
 {
 	m_tGunInfo.Name = ITEM::BOSSGUN;
 	m_idir = m_pTarget->GetDir();
-	m_tGunInfo.fBulletCoolTime = 200;
+	m_tGunInfo.fBulletCoolTime = 2000;
 	m_tGunInfo.fBulletDist = 400;
 	m_tGunInfo.fBulletTime = GetTickCount();
 	if (0 > m_pTarget->GetDir())

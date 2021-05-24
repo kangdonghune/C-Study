@@ -54,8 +54,8 @@ int CGun::Ready_GameObject()
 {
 	m_tGunInfo.Name = ITEM::MACHINGUN;
 	m_idir = m_pTarget->GetDir();
-	m_tGunInfo.fBulletCoolTime = 30;
-	m_tGunInfo.fBulletDist = 400;
+	m_tGunInfo.fBulletCoolTime = 80;
+	m_tGunInfo.fBulletDist = 500;
 	m_tGunInfo.fBulletTime = GetTickCount();
 	if (0 > m_pTarget->GetDir())
 	{

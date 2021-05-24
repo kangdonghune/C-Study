@@ -5,6 +5,7 @@
 #include "Logo.h"
 CMainMenu::CMainMenu()
 {
+
 }
 
 
@@ -29,6 +30,7 @@ CScene * CMainMenu::Create()
 int CMainMenu::Ready_Scene()
 {
 	m_pLogo = CLogo::Create();
+
 	return Function_Pass;
 }
 

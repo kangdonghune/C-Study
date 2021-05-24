@@ -141,6 +141,9 @@
     <Filter Include="소스 파일\01.game-object\07.Item">
       <UniqueIdentifier>{7b804779-f94c-4af6-8040-21b664cca216}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\095.SoundManager">
+      <UniqueIdentifier>{502ebc0a-e647-4ec4-8d00-4ab626397c4b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -287,6 +290,9 @@
     <ClInclude Include="Player_Bullet.h">
       <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
     </ClInclude>
+    <ClInclude Include="SoundMgr.h">
+      <Filter>소스 파일\095.SoundManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="시연회_발표_렐릭헌터즈.cpp">
@@ -411,6 +417,9 @@
     </ClCompile>
     <ClCompile Include="Player_Bullet.cpp">
       <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundMgr.cpp">
+      <Filter>소스 파일\095.SoundManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

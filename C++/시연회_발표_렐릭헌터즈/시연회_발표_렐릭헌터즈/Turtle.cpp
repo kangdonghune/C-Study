@@ -11,7 +11,7 @@
 #include "MapObject.h"
 #include <iostream>
 #include <random>
-
+#include "Pistol.h"
 
 
 CTultle::CTultle()
@@ -121,7 +121,7 @@ int CTultle::Ready_GameObject()
 	m_irandomDirX = dir(gen);
 	m_irandomDirY = dir(gen);
 
-	m_pMyGun = CGun::Create(this);
+	m_pMyGun = CPistol::Create(this);
 	if(!CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GUN, m_pMyGun))
 		return Function_Fail;
 	return Function_Pass;

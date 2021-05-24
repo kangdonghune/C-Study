@@ -38,6 +38,8 @@ int CMain::Ready_Main()
 	//	return Function_Fail; //플레이어 추가 실패한다면 
 
 	CSceneManeger::Get_SceneManeger()->Change_SceneManager(CSceneManeger::SCENE_MENU);
+	CSoundMgr::Get_Instance()->Initialize();
+	CSoundMgr::Get_Instance()->PlayBGM(L"bgm_menu.wav");
 	return Function_Pass;
 }
 

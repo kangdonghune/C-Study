@@ -24,9 +24,15 @@
 #include <atlimage.h>
 using namespace std;
 
+//사운드
+#include <io.h>
+#include "fmod.h"
+#pragma comment(lib, "fmodex_vc.lib")
+
 // TODO: 프로그램에 필요한 추가 헤더는 여기에서 참조합니다.
 #include "define.h"
 #include "extern.h"
 #include "enum.h"
 #include "function.h"
 #include "struct.h"
+#include "SoundMgr.h"

@@ -44,8 +44,8 @@ bool CWave::WaveGunRebound()
 	static float fAngle2 = 0;
 	fAngle2 += 30.f;
 
-	CScrollManeger::Set_ScrollX(-cosf(fAngle/RADIAN) *(sinf(fAngle2) * 3.f));
-	//CScrollManeger::Set_ScrollY(-sinf(fAngle/RADIAN) *(sinf(fAngle2) * 20.f));
+	CScrollManeger::Set_ScrollX(-cosf(fAngle/RADIAN) *(sinf(fAngle2) * 8.f));
+	//CScrollManeger::Set_ScrollY(-sinf(fAngle/RADIAN) *(sinf(fAngle2) * 5.f));
 
 	if (fAngle2 == 360.f)
 	{

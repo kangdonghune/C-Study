@@ -35,6 +35,7 @@ CScene * CStage::Create()
 
 int CStage::Ready_Scene()
 {
+	CSoundMgr::Get_Instance()->PlayBGM(L"bgm_menu.wav");
 	m_pEffect = CStageLogo::Create(1);
 	CMapObjectManeger::Get_MapManeger()->Load_MapObjectManager(L"../Data/Stage1.dat");
 	CGameObject* pObject = CPlayer::Create();
@@ -76,10 +77,15 @@ void CStage::Update_Scene()
 	CMapObjectManeger::Get_MapManeger()->LateUpdate_MapObjectManeger();
 	CGameObjectManeger::Get_GameObjectManeger()->LateUpdate_GameObjectManeger();
 
-	if(m_bStageChange == true)
+	if (m_bStageChange == true)
+	{
+		CSoundMgr::Get_Instance()->StopAll();
 		CSceneManeger::Get_SceneManeger()->Change_SceneManager(CSceneManeger::ID::SCENE_BOSS);
+	}
+
 	if (GetAsyncKeyState('V'))
 	{
+		CSoundMgr::Get_Instance()->StopAll();
 		CSceneManeger::Get_SceneManeger()->Change_SceneManager(CSceneManeger::ID::SCENE_BOSS);
 		m_bStageChange = true;
 	}

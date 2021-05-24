@@ -176,6 +176,7 @@
     <ClInclude Include="Portal.h" />
     <ClInclude Include="PushButton.h" />
     <ClInclude Include="ShotGun.h" />
+    <ClInclude Include="SoundMgr.h" />
     <ClInclude Include="StageLogo.h" />
     <ClInclude Include="Turtle.h" />
     <ClInclude Include="MonsterManeger.h" />
@@ -222,6 +223,7 @@
     <ClCompile Include="Portal.cpp" />
     <ClCompile Include="PushButton.cpp" />
     <ClCompile Include="ShotGun.cpp" />
+    <ClCompile Include="SoundMgr.cpp" />
     <ClCompile Include="StageLogo.cpp" />
     <ClCompile Include="Turtle.cpp" />
     <ClCompile Include="MonsterManeger.cpp" />

@@ -48,7 +48,7 @@ void CSceneManeger::Change_SceneManager(ID eNextScene)
 	m_eNextScene = eNextScene;
 	if (m_eCurScene != m_eNextScene)
 	{
-
+		CSoundMgr::Get_Instance()->StopAll();
 		Delete_Dynamic(m_pScene);
 		switch (m_eNextScene)
 		{

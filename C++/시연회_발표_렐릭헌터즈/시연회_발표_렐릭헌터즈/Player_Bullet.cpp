@@ -5,6 +5,7 @@
 #include "ScrollManeger.h"
 #include "Player.h"
 #include "BitmapManeger.h"
+#include "SceneManeger.h"
 
 CPlayer_Bullet::CPlayer_Bullet()
 {
@@ -40,10 +41,11 @@ int CPlayer_Bullet::Ready_GameObject()
 	std::uniform_int_distribution<int> dir(-1, 1);
 	Name = (m_pTarget)->Get_MyGun()->Get_GunInfo()->Name;
 	int RandomDir = dir(rd);
-	m_tBulletInfo.fBulletDist = 400;
+	m_tBulletInfo.fBulletDist = 500;
 	switch (Name)
 	{
 	case ITEM::PISTOL:
+		CSoundMgr::Get_Instance()->PlaySound(L"sfx_pistol.wav", CSoundMgr::EFFECT);
 		m_hDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Pistol_Bullet");
 		m_tInfo.fAngle = m_pTarget->GetInfo()->fAngle + RandomDir*5;
 		m_tInfo.fX = m_pTarget->GetInfo()->fX + (cosf(m_tInfo.fAngle / RADIAN)*PISTOL_C);
@@ -54,16 +56,19 @@ int CPlayer_Bullet::Ready_GameObject()
 		m_tInfo.iDamege = 15;
 		break;
 	case ITEM::MACHINGUN:
+		CSoundMgr::Get_Instance()->PlaySound(L"sfx_rifle1.wav", CSoundMgr::UI);
 		m_hDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Machgun_bullet");
 		m_tInfo.fAngle = m_pTarget->GetInfo()->fAngle + RandomDir * 5;
-		m_tInfo.fX = m_pTarget->GetInfo()->fX + (cosf(m_tInfo.fAngle / RADIAN)*GUN_ICX*3/4.f);
+		m_tInfo.fX = m_pTarget->GetInfo()->fX + (cosf(m_tInfo.fAngle / RADIAN)*GUN_ICX/2.f);
 		m_tInfo.fY = m_pTarget->GetInfo()->fY + sinf(m_tInfo.fAngle / RADIAN)*GUN_ICY / 2 + 13;
-		m_tInfo.fSpeed = 25.f;
+		m_tInfo.fSpeed = 20.f;
 		m_tInfo.iCX = Machgun_bC;
 		m_tInfo.iCY = Machgun_bC;
-		m_tInfo.iDamege = 20;
+		m_tInfo.iDamege = 10;
+		CSceneManeger::Get_SceneManeger()->SetWaveGunRebounde(true);
 		break;
 	case ITEM::SHOTGUN:
+		CSoundMgr::Get_Instance()->PlaySound(L"sfx_shotgun.wav", CSoundMgr::UI);
 		m_hDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Player_bullet");
 		m_tInfo.fAngle = m_pTarget->GetInfo()->fAngle;
 		m_tInfo.fX = m_pTarget->GetInfo()->fX + (cosf(m_tInfo.fAngle / RADIAN)*SHOTGUN_C * 3 / 4.f);
@@ -72,8 +77,10 @@ int CPlayer_Bullet::Ready_GameObject()
 		m_tInfo.iCX = Bullet_ICX;
 		m_tInfo.iCY = Bullet_ICY;
 		m_tInfo.iDamege = 20;
+		CSceneManeger::Get_SceneManeger()->SetWaveOn(true);
 		break;
 	case ITEM::BOSSGUN:
+		//CSoundMgr::Get_Instance()->PlaySound(L"sfx_shield_destroy.wav", CSoundMgr::MONSTER);
 		m_hDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Boss_Bullet");
 		m_tInfo.fAngle = m_pTarget->GetInfo()->fAngle + RandomDir * 5;
 		m_tInfo.fX = m_pTarget->GetInfo()->fX + (cosf(m_tInfo.fAngle / RADIAN)*Boss_GunCX * 3 / 4.f);

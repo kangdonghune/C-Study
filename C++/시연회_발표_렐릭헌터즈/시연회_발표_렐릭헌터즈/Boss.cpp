@@ -85,7 +85,7 @@ void CBoss::Attack()
 {
 	if (m_iState == DEAD || m_iState == READYDEAD)
 		return;
-	if (dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime + dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletCoolTime < GetTickCount())
+	if (m_pMyGun->Get_GunInfo()->fBulletTime +m_pMyGun->Get_GunInfo()->fBulletCoolTime < GetTickCount())
 	{
 		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::MONSTER_BULLET, CPlayer_Bullet::Create(this));
 		dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime = GetTickCount();
@@ -188,6 +188,7 @@ int CBoss::Update_GameObject()
 				if (!CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::BOSSGUN, m_pMyGun))
 					return Function_Fail;
 				CGameObjectManeger::Get_GameObjectManeger()->GetList(GAMEOBJECT::BOSSGUN).back()->SetGunName(ITEM::BOSSGUN);
+				CGameObjectManeger::Get_GameObjectManeger()->GetList(GAMEOBJECT::BOSSGUN).back()->SetGunInfo().fBulletCoolTime = 100;
 			}
 			return Function_Pass;
 

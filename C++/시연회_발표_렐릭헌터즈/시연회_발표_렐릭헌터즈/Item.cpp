@@ -155,7 +155,7 @@ int CItem::Render_GameObject(HDC hdc)
 int CItem::Update_GameObject()
 {
 
-	if (150 >= fabs(m_pTarget->GetInfo()->fX - m_tInfo.fX) && 150 >= fabs(m_pTarget->GetInfo()->fY - m_tInfo.fY))
+	if (100 >= fabs(m_pTarget->GetInfo()->fX - m_tInfo.fX) && 100 >= fabs(m_pTarget->GetInfo()->fY - m_tInfo.fY))
 	{
 		if (m_bButtonRender == false)
 		{
@@ -163,8 +163,12 @@ int CItem::Update_GameObject()
 			CMapObjectManeger::Get_MapManeger()->Insert_MapObject(MAPOBJECT::BUTTON, m_pButton);
 			m_bButtonRender = true;
 		}
-		if(GetAsyncKeyState('E') & 0X0001)
+		if (GetAsyncKeyState('E') & 0X0001)
+		{
+			CSoundMgr::Get_Instance()->PlaySound(L"sfx_pickup_weapon.wav", CSoundMgr::EFFECT);
 			PushButton();
+		}
+			
 	}
 	else
 	{

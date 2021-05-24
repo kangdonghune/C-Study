@@ -31,6 +31,8 @@ CScene * CBossStage::Create()
 
 int CBossStage::Ready_Scene()
 {
+	CSoundMgr::Get_Instance()->PlayBGM(L"bgm_stage2.wav");
+	CSoundMgr::Get_Instance()->PlaySound(L"sfx_teleport.wav", CSoundMgr::PLAYER);
 	m_pEffect = CStageLogo::Create(2);
 	for (auto& pMonster : CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::MONSTER))
 		pMonster->SetDead();

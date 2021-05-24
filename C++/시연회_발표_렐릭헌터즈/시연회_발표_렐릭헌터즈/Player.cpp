@@ -367,17 +367,18 @@ int CPlayer::Update_GameObject()
 	{
 		if (m_pMyGun == nullptr)
 			return Function_Pass;
-
-		if (dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime + dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletCoolTime < GetTickCount())
-		{
-			CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
-			dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime = GetTickCount();
-			CSceneManeger::Get_SceneManeger()->SetWaveGunRebounde(true);
-		}
+		
+			if (dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime + dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletCoolTime < GetTickCount())
+			{
+				CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
+				dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime = GetTickCount();
+			
+			}
 	}
 
 	if (GetAsyncKeyState('Q') & 0x0001 && m_bGrenadeOn)
 	{
+		CSoundMgr::Get_Instance()->PlaySound(L"sfx_grenade_explosion.wav", CSoundMgr::PLAYER);
 		GetCursorPos(&m_tMouse);
 		ScreenToClient(g_HWND, &m_tMouse);
 		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GRENADE, CGrenade::Create(this, m_tMouse));
