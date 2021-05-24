@@ -46,9 +46,11 @@
 #define GUN_ICX 80 //¸Ó½Å°Ç
 #define GUN_ICY 80
 //ÃÑ¾Ë
-#define Bullet_ICX 60 //¸Ó½Å°Ç ÃÑ¾Ë
+#define Bullet_ICX 60 //¼¦°Ç ÃÑ¾Ë
 #define Bullet_ICY 60
 #define Pistol_bC  30
+#define Machgun_2bC 46
+#define Bossgun_2bC 46
 #define Machgun_bC 46
 #define Bossgun_bC 46
 //ÃÑ¾Ë

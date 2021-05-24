@@ -85,10 +85,10 @@ void CBoss::Attack()
 {
 	if (m_iState == DEAD || m_iState == READYDEAD)
 		return;
-	if (dynamic_cast<BossGun*>(m_pMyGun)->Get_GunInfo()->fBulletTime + dynamic_cast<BossGun*>(m_pMyGun)->Get_GunInfo()->fBulletCoolTime < GetTickCount())
+	if (dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime + dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletCoolTime < GetTickCount())
 	{
 		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::MONSTER_BULLET, CPlayer_Bullet::Create(this));
-		dynamic_cast<BossGun*>(m_pMyGun)->Get_GunInfo()->fBulletTime = GetTickCount();
+		dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime = GetTickCount();
 	}
 }
 
@@ -185,8 +185,9 @@ int CBoss::Update_GameObject()
 				m_iState = IDLE;
 				m_tAni.iStart = 0;
 				m_pMyGun = BossGun::Create(this);
-				if (!CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GUN, m_pMyGun))
+				if (!CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::BOSSGUN, m_pMyGun))
 					return Function_Fail;
+				CGameObjectManeger::Get_GameObjectManeger()->GetList(GAMEOBJECT::BOSSGUN).back()->SetGunName(ITEM::BOSSGUN);
 			}
 			return Function_Pass;
 

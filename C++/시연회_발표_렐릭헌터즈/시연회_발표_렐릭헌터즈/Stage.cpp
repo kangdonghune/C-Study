@@ -41,9 +41,9 @@ int CStage::Ready_Scene()
 	CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER, pObject);
 	CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::UI, CPlayerHP::Create(pObject));
 	CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::ITEM, CItem::Create(pObject, ITEM::PISTOL, 600, 400));
-	CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::ITEM, CItem::Create(pObject, ITEM::MACHINGUN, 600, 600));
-	CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::ITEM, CItem::Create(pObject, ITEM::SHOTGUN, 600, 800));
-	CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::ITEM, CItem::Create(pObject, ITEM::GRENADE, 600, 1000));
+	CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::ITEM, CItem::Create(pObject, ITEM::MACHINGUN, 300, 2200));
+	CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::ITEM, CItem::Create(pObject, ITEM::SHOTGUN, 200, 2200));
+	CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::ITEM, CItem::Create(pObject, ITEM::GRENADE, 700, 2200));
 
 	CMonsterManeger::Get_MonsterManeger()->Insert_Monster(MONSTER::TURTLE, 1800, 400, pObject);
 	CMonsterManeger::Get_MonsterManeger()->Insert_Monster(MONSTER::TURTLE, 2000, 600, pObject);

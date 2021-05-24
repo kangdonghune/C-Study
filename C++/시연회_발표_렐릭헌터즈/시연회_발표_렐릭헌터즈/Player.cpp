@@ -264,7 +264,7 @@ int CPlayer::Ready_GameObject()
 	m_tInfo.iCY = PLAYER_ICY;
 	m_tInfo.fSpeed = PLAYER_SPEED;
 	m_tInfo.fAngle = 0;
-	m_tInfo.iMaxHp = 6000;
+	m_tInfo.iMaxHp = 100000;
 	m_tInfo.iHP = m_tInfo.iMaxHp;
 	m_tInfo.dwTime = GetTickCount();
 	m_tInfo.LimitTime = 180;
@@ -395,6 +395,29 @@ int CPlayer::Update_GameObject()
 				m_iGunNum = 0;
 		}
 	}
+
+	if (GetAsyncKeyState('Z') & 0x0001)
+	{
+		m_tInfo.iHP = m_tInfo.iMaxHp;
+	}
+
+	if (GetAsyncKeyState('X') & 0x0001)
+	{
+		int GunsSize = m_vecGuns.size(); //한개라도 있으면 1;
+		if (!m_vecGuns.empty())
+		{
+			m_tInfo.iHP = m_tInfo.iMaxHp/2;
+		}
+	}
+	if (GetAsyncKeyState('C') & 0x0001)
+	{
+		int GunsSize = m_vecGuns.size(); //한개라도 있으면 1;
+		if (!m_vecGuns.empty())
+		{
+			m_tInfo.iHP = m_tInfo.iMaxHp / 4;
+		}
+	}
+
 		
 	return Function_Pass;
 }

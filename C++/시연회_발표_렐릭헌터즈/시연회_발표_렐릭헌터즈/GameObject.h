@@ -26,6 +26,8 @@ public:
 	CGameObject* Get_MyGun() { return m_pMyGun; }
 	void UpdateRect();
 	void SetHold() { m_iState = HOLD; }
+	void SetGunName(ITEM::Name Name) { m_tGunInfo.Name = Name; }
+
 
 	float CheckTargetDir(CGameObject* pTarget);
 	float CheckMouseDir();

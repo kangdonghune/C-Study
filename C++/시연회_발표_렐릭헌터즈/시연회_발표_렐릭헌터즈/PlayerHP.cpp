@@ -50,6 +50,8 @@ int CPlayerHP::Update_GameObject()
 	if (m_pTarget->GetState() == DEAD)
 		SetDead();
 	UpdateRect();
+	if (m_pTarget->GetInfo()->iMaxHp * 2 / 3.f <= m_pTarget->GetInfo()->iHP)
+		m_tAni.iStart = 0;
 	if (m_pTarget->GetInfo()->iMaxHp * 2 / 3.f >= m_pTarget->GetInfo()->iHP)
 		m_tAni.iStart = 1;
 	if (m_pTarget->GetInfo()->iMaxHp * 1 / 3.f >= m_pTarget->GetInfo()->iHP)

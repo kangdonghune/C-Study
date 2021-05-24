@@ -35,9 +35,9 @@ void BossGun::UpdateGunRect()
 		fPushx = -10;
 
 	m_Rc.left = m_pTarget->GetInfo()->fX - Boss_GunCX / 2 + fPushx;
-	m_Rc.top = m_pTarget->GetInfo()->fY - (Boss_GunCY / 5.f) + 30;
+	m_Rc.top = m_pTarget->GetInfo()->fY - (Boss_GunCY /3.f) + 20;
 	m_Rc.right = m_pTarget->GetInfo()->fX + Boss_GunCX / 2 + fPushx;
-	m_Rc.bottom = m_pTarget->GetInfo()->fY + (Boss_GunCY / 5.f) * 4 +30;
+	m_Rc.bottom = m_pTarget->GetInfo()->fY + (Boss_GunCY*2/3.f) + 20;
 
 	m_tInfo.fX = m_pTarget->GetInfo()->fX;
 	m_tInfo.fY = m_pTarget->GetInfo()->fY;

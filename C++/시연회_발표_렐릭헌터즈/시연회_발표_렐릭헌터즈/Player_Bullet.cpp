@@ -64,8 +64,24 @@ int CPlayer_Bullet::Ready_GameObject()
 		m_tInfo.iDamege = 20;
 		break;
 	case ITEM::SHOTGUN:
+		m_hDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Player_bullet");
+		m_tInfo.fAngle = m_pTarget->GetInfo()->fAngle;
+		m_tInfo.fX = m_pTarget->GetInfo()->fX + (cosf(m_tInfo.fAngle / RADIAN)*SHOTGUN_C * 3 / 4.f);
+		m_tInfo.fY = m_pTarget->GetInfo()->fY + sinf(m_tInfo.fAngle / RADIAN)*SHOTGUN_C / 2 + 13;
+		m_tInfo.fSpeed = 22.f;
+		m_tInfo.iCX = Bullet_ICX;
+		m_tInfo.iCY = Bullet_ICY;
+		m_tInfo.iDamege = 20;
 		break;
 	case ITEM::BOSSGUN:
+		m_hDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Boss_Bullet");
+		m_tInfo.fAngle = m_pTarget->GetInfo()->fAngle + RandomDir * 5;
+		m_tInfo.fX = m_pTarget->GetInfo()->fX + (cosf(m_tInfo.fAngle / RADIAN)*Boss_GunCX * 3 / 4.f);
+		m_tInfo.fY = m_pTarget->GetInfo()->fY + sinf(m_tInfo.fAngle / RADIAN)*Boss_GunCY;
+		m_tInfo.fSpeed = 22.f;
+		m_tInfo.iCX = Bossgun_bC;
+		m_tInfo.iCY = Bossgun_bC;
+		m_tInfo.iDamege = 20;
 		break;
 	default:
 		break;
