@@ -5,6 +5,7 @@
 CGameObject::CGameObject()
 	:m_iState(IDLE)
 	,m_tAni({})
+	,m_pMyGun(nullptr)
 {
 }
 

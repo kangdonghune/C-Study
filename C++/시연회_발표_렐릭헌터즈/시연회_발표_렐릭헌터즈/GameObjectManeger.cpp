@@ -59,12 +59,14 @@ int CGameObjectManeger::Render_GameObjectManeger(HDC hdc)
 	{
 		for (auto& iter = m_listGameObject[i].begin(); iter != m_listGameObject[i].end(); ++iter)
 		{
-			
+			if (HOLD == (*iter)->GetState())
+				continue;
 			(*iter)->Render_GameObject(hdc);
 		}
 	}
 
-	//dynamic_cast<CPlayer*>(m_listGameObject[GAMEOBJECT::PLAYER].back())->Get_MyGun()->Render_GameObject(hdc);
+	if (m_listGameObject[GAMEOBJECT::PLAYER].back()->Get_MyGun() != nullptr)
+		m_listGameObject[GAMEOBJECT::PLAYER].back()->Get_MyGun()->Render_GameObject(hdc);
 	return Function_Pass;
 }
 

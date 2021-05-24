@@ -48,6 +48,7 @@ void CItem::PushButton()
 		return Function_Fail;*/
 		dynamic_cast<CPlayer*>(m_pTarget)->SetMyGun(CPistol::Create(m_pTarget));
 		dynamic_cast<CPlayer*>(m_pTarget)->SetGunVector().emplace_back(dynamic_cast<CPlayer*>(m_pTarget)->Get_MyGun());
+		m_pTarget->Get_MyGun()->SetHold();
 		if (!(CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GUN, dynamic_cast<CPlayer*>(m_pTarget)->Get_MyGun())))
 			MessageBox(nullptr, L"ÀåÂø", L"error", MB_OK);
 		SetDead();
@@ -55,6 +56,7 @@ void CItem::PushButton()
 	case ITEM::MACHINGUN:
 		dynamic_cast<CPlayer*>(m_pTarget)->SetMyGun(CGun::Create(m_pTarget));
 		dynamic_cast<CPlayer*>(m_pTarget)->SetGunVector().emplace_back(dynamic_cast<CPlayer*>(m_pTarget)->Get_MyGun());
+		m_pTarget->Get_MyGun()->SetHold();
 		if (!(CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GUN, dynamic_cast<CPlayer*>(m_pTarget)->Get_MyGun())))
 			MessageBox(nullptr, L"ÀåÂø", L"error", MB_OK);
 		SetDead();
@@ -62,6 +64,7 @@ void CItem::PushButton()
 	case ITEM::SHOTGUN:
 		dynamic_cast<CPlayer*>(m_pTarget)->SetMyGun(CShotGun::Create(m_pTarget));
 		dynamic_cast<CPlayer*>(m_pTarget)->SetGunVector().emplace_back(dynamic_cast<CPlayer*>(m_pTarget)->Get_MyGun());
+		m_pTarget->Get_MyGun()->SetHold();
 		if (!(CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GUN, dynamic_cast<CPlayer*>(m_pTarget)->Get_MyGun())))
 			MessageBox(nullptr, L"ÀåÂø", L"error", MB_OK);
 		SetDead();

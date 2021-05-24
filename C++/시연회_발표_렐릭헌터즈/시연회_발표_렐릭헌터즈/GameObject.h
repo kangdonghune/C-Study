@@ -25,7 +25,8 @@ public:
 	CGameObject* GetTarget() { return m_pTarget; }
 	CGameObject* Get_MyGun() { return m_pMyGun; }
 	void UpdateRect();
-	
+	void SetHold() { m_iState = HOLD; }
+
 	float CheckTargetDir(CGameObject* pTarget);
 	float CheckMouseDir();
 	void  AngleToTarget(float targetX, float targetY) { m_tInfo.fAngle = atan2f((targetY - m_tInfo.fY), (targetX - m_tInfo.fX)); }

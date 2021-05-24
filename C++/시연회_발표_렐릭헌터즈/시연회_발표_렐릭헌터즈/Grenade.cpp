@@ -50,6 +50,7 @@ int CGrenade::Ready_GameObject()
 	m_bIsBoom = false;
 	m_tInfo.dwTime = GetTickCount();
 	m_tInfo.LimitTime = 50;
+	m_tInfo.iDamege = 100;
 	return Function_Pass;
 }
 

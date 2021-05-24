@@ -96,6 +96,36 @@ void CColliderManeger::Collision_UnitAndBullet(list<CGameObject*>* pDestList, li
 		}
 	}
 }
+void CColliderManeger::Collision_UnitAndGrenadeToM(list<CGameObject*>* pDestList, list<CGameObject*>* pSrcList)
+{
+	RECT rc{};
+	for (auto& pSrcObject : *pSrcList)
+	{
+		for (auto& pDestObject : *pDestList)
+		{
+			if (IntersectRect(&rc, &pDestObject->GetHitBox(), &pSrcObject->GetRect()))
+			{
+				pSrcObject->SetDemage(pDestObject);
+			}
+		}
+	}
+}
+
+void CColliderManeger::Collision_UnitAndGrenade(list<CGameObject*>* pDestList, list<CGameObject*>* pSrcList)
+{
+	RECT rc{};
+	for (auto& pSrcObject : *pSrcList)
+	{
+		for (auto& pDestObject : *pDestList)
+		{
+			if (IntersectRect(&rc, &pDestObject->GetHitBox(), &pSrcObject->GetRect()))
+			{
+				pSrcObject->SetDemage(pDestObject);
+				pSrcObject->SetInfo()->iDamege = 0;
+			}
+		}
+	}
+}
 //충돌 체크는 어디서 해야하는가?
 //게임매니저와 맵매니저는 다른 곳에 존재하니 아예 SCene에서 해주자? = 씬마다 만드는 건 에반데.
 

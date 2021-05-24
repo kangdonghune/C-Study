@@ -107,6 +107,8 @@ void CSceneManeger::Update_SceneManager()
 	}
 	CColliderManeger::Get_ColliderManeger()->Collision_UnitAndBullet(&CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::MONSTER), &CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::PLAYER_BULLET));
 	CColliderManeger::Get_ColliderManeger()->Collision_UnitAndBullet(&CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::BOSS), &CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::PLAYER_BULLET));
+	CColliderManeger::Get_ColliderManeger()->Collision_UnitAndGrenadeToM(&CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::MONSTER), &CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::GRENADE));
+	CColliderManeger::Get_ColliderManeger()->Collision_UnitAndGrenade(&CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::BOSS), &CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::GRENADE));
 	CColliderManeger::Get_ColliderManeger()->Collision_UnitAndBullet(&CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::PLAYER), &CGameObjectManeger::Get_GameObjectManeger()->SetList(GAMEOBJECT::MONSTER_BULLET));
 	
 

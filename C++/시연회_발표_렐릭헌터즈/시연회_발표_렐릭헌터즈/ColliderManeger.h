@@ -14,6 +14,8 @@ public:
 	void Collision_PlayerAndNonePassObj(vector<CMapObject*>* pDestList, list<CGameObject*>* pSrcList);
 	void Collision_BulletAndNonePassObj(vector<CMapObject*>* pDestList, list<CGameObject*>* pSrcList);
 	void Collision_UnitAndBullet(list<CGameObject*>* pDestList, list<CGameObject*>* pSrcList);
+	void Collision_UnitAndGrenadeToM(list<CGameObject*>* pDestList, list<CGameObject*>* pSrcList);
+	void Collision_UnitAndGrenade(list<CGameObject*>* pDestList, list<CGameObject*>* pSrcList);
 private:
 	bool Check_Rect(const MAPINFO* pDstInfo, const GAMEOBJINFO* pSrcInfo, float* pOutX, float* pOutY);
 	bool Check_Rect(const GAMEOBJINFO* pDstInfo, const GAMEOBJINFO* pSrcInfo, float* pOutX, float* pOutY);
