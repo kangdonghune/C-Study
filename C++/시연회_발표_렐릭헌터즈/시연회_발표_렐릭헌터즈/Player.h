@@ -12,15 +12,24 @@ public:
 	static CGameObject* Create();
 
 public:
+	CGameObject* Get_MyGun() { return m_pMyGun; }
+	void SetGrenadeOn(bool boolvalue) { m_bGrenadeOn = boolvalue; }
+
+	void SetMyGun(CGameObject* pGun) { m_pMyGun = pGun; }
+	vector<CGameObject*>& SetGunVector() { return m_vecGuns; }
+
+
 	void IsOffset();
 	void Idle();
 	void Walk();
 	void Run();
 	void Melee();
-
+	void ReadyDead();
+	
 	void CheckState(int State);
 	int CheckPlayerDir();
-
+	void UpdateHitBox();
+	
 
 public:
 	// CGameObject을(를) 통해 상속됨
@@ -31,5 +40,10 @@ public:
 	virtual int Release_GameObject() override;
 private:
 	HDC m_ObjectDc;
+	CGameObject* m_pMyGun;
+	vector<CGameObject*> m_vecGuns;
+	bool m_bGrenadeOn;
+	int m_iGunNum;
+
 };
 

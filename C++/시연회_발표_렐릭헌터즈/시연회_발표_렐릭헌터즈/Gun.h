@@ -4,15 +4,17 @@ class CGun :
 	public CGameObject
 {
 private:
+public:
 	CGun();
-
-public:
 	static CGameObject* Create(CGameObject* pTarget);
-
+	CGameObject* GetTarget() { return m_pTarget; }
 public:
+
+	ITEM::Name GetName() { return m_tGunInfo.Name; }
 	void SetTarget(CGameObject* pTarget) { m_pTarget = pTarget; }
+
+	
 	void UpdateGunRect();
-	void SetPoints(float Radian);
 public:
 	~CGun();
 
@@ -23,8 +25,8 @@ public:
 	virtual int LateUpdate_GameObject() override;
 	virtual int Release_GameObject() override;
 	
-private:
-	CGameObject* m_pTarget;
+protected:
+
 	HDC m_hGunDC;
 	POINT* m_pPoint;
 

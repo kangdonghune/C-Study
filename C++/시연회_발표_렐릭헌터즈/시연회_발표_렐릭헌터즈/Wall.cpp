@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Wall.h"
 #include "BitmapManeger.h"
+#include "ScrollManeger.h"
 
 CWall::CWall()
 {
@@ -39,7 +40,8 @@ int CWall::Ready_MapObject()
 	m_tMapInfo.ObjType = MAPOBJECT::WALL;
 	m_tMapInfo.iCX = Wall_SideCX;
 	m_tMapInfo.iCY = Wall_SideCY;
-	m_tMapInfo.Objfeature = MAPOBJECTTYPE::DONEPASS;
+	m_tMapInfo.Objfeature = MAPOBJECTTYPE::NONEPASS;
+	
 	return Function_Pass;
 }
 
@@ -48,12 +50,13 @@ int CWall::Render_MapObject(HDC hdc)
 	HDC m_hmapDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"desert_wall");
 	if (m_hmapDC == nullptr)
 		return Function_Fail;
-	GdiTransparentBlt(hdc, m_Rc.left, m_Rc.top, Wall_SideCX, Wall_SideCY, m_hmapDC, (m_tMapInfo.iWallNum) *Wall_SideCX, 0, Wall_SideImgCX, Wall_SideImgCY, bmi_BackGround);
+	GdiTransparentBlt(hdc, m_Rc.left+CScrollManeger::Get_ScrollX(), m_Rc.top+CScrollManeger::Get_ScrollY(), Wall_SideCX, Wall_SideCY, m_hmapDC, (m_tMapInfo.iWallNum)*Wall_SideCX, 0, Wall_SideCX, Wall_SideCY, bmi_BackGround);
 	return Function_Pass;
 }
 
 int CWall::Update_MapObject()
 {
+
 	Update_Rect();
 	return Function_Pass;
 }

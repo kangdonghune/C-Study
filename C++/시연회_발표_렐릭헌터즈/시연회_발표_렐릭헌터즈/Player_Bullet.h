@@ -24,8 +24,12 @@ public:
 	virtual int Release_GameObject() override;
 
 private:
-	CGameObject* m_pTarget;
 	int m_icount;
 	float m_fStart;
+	BULLETINFO m_tBulletInfo;
+	RECT m_tOldRect;
+	int randomDir;
+	HDC m_hDC;
+	ITEM::Name Name;
 };
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+class CLogo;
 class CMainMenu : public CScene
 {
 private:
@@ -13,5 +14,8 @@ public:
 	virtual void Update_Scene() override;
 	virtual void Render_Scene(HDC hDC) override;
 	virtual void Release_Scene() override;
+
+private:
+	CLogo* m_pLogo;
 };
 

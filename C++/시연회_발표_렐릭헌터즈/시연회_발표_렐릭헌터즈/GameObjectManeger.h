@@ -12,8 +12,9 @@ public:
 
 public:
 	int Add_GameObject(GAMEOBJECT::Object Num, CGameObject* pObject);
-	const list<CGameObject*> GetList(GAMEOBJECT::Object Num) { return m_listGameObject[Num]; }
+	list<CGameObject*> GetList(GAMEOBJECT::Object Num) { return m_listGameObject[Num]; }
 	list<CGameObject*> SetList(GAMEOBJECT::Object Num) { return m_listGameObject[Num]; }
+
 public:
 	int Ready_GameObjectManeger();
 	int Render_GameObjectManeger(HDC hdc);

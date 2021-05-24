@@ -11,7 +11,28 @@ typedef struct tag_Objinfomation
 	int iDamege;
 	float fSpeed;
 	float fAngle;
-}G_INFO;
+	float fDirX;
+	float fDirY;
+	DWORD dwTime;
+	DWORD LimitTime;
+}GAMEOBJINFO;
+
+typedef struct tag_GunInfomation
+{
+	float	fBulletTime;
+	float	fBulletCoolTime;
+	float	fBulletDist;
+	int		iBulletDamege;
+	ITEM::Name Name;
+}GUNINFO;
+
+typedef struct tag_BulletInfomation
+{
+	float	fBulletTime;
+	float	fBulletCoolTime;
+	float	fBulletDist;
+	int		iBulletDamege;
+}BULLETINFO;
 
 typedef struct tag_MapObjInfo
 {
@@ -23,8 +44,7 @@ typedef struct tag_MapObjInfo
 	MAPOBJECTTYPE::TYPE Objfeature;
 	int iCellingNum;
 	int iWallNum;
-}M_INFO;
-
+}MAPINFO;
 
 typedef struct tag_AnimationINFO
 {
@@ -32,4 +52,33 @@ typedef struct tag_AnimationINFO
 	int iEnd;
 
 }ANIINFO;
+
+typedef struct tag_LaserPointer
+{
+	float fX;
+	float fY;
+	float TargetDir;
+	float fSpeed;
+	float fdistance;
+	RECT  RC;
+}LaserPoint;
+
+typedef struct tag_acceleration
+{
+	float fPower;
+	float Gravity;
+	float fAccel;
+}GRAVITY;
+
+typedef struct tag_LogoInfo
+{
+	float fX;
+	float fY;
+	int iCX;
+	int iCY;
+	DWORD dwTime;
+	DWORD Limit;
+	int iRenderStart;
+	int iRenderEnd;
+}LOGOINFO;
 

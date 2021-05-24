@@ -1,7 +1,12 @@
 #include "stdafx.h"
 #include "GameObjectManeger.h"
 #include "GameObject.h"
-
+#include "ColliderManeger.h"
+#include "MapObjectManeger.h"
+#include "Gun.h"
+#include "Pistol.h"
+#include "ShotGun.h"
+#include "Player.h"
 CGameObjectManeger* CGameObjectManeger::m_pInstance = nullptr;
 CGameObjectManeger::CGameObjectManeger()
 {
@@ -53,9 +58,14 @@ int CGameObjectManeger::Render_GameObjectManeger(HDC hdc)
 	{
 		for (auto& iter = m_listGameObject[i].begin(); iter != m_listGameObject[i].end(); ++iter)
 		{
+			if (GAMEOBJECT::GUN == i)
+				if ((*iter) != dynamic_cast<CPlayer*>(m_listGameObject[GAMEOBJECT::PLAYER].back())->Get_MyGun())
+					continue;
 			(*iter)->Render_GameObject(hdc);
 		}
 	}
+
+	//dynamic_cast<CPlayer*>(m_listGameObject[GAMEOBJECT::PLAYER].back())->Get_MyGun()->Render_GameObject(hdc);
 	return Function_Pass;
 }
 
@@ -91,6 +101,8 @@ int CGameObjectManeger::LateUpdate_GameObjectManeger()
 			(*iter)->LateUpdate_GameObject();
 		}
 	}
+	
+	
 	return Function_Pass;
 }
 

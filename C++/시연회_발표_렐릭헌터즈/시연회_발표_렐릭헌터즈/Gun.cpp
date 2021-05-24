@@ -5,7 +5,10 @@
 #include "GameObject.h"
 #include "BitmapManeger.h"
 #include "Player.h"
-
+#include "ScrollManeger.h"
+#include "Player_Bullet.h"
+#include "GameObject.h"
+#include "GameObjectManeger.h"
 
 CGun::CGun()
 	:m_pPoint(nullptr)
@@ -27,80 +30,21 @@ CGameObject * CGun::Create(CGameObject* pTarget)
 
 
 void CGun::UpdateGunRect()
-{
-	if (0 > m_idir)
-	{
-		m_Rc.left = m_pTarget->GetInfo()->fX;
-		m_Rc.top = m_pTarget->GetInfo()->fY + GUN_ICY/2;
-		m_Rc.right = m_pTarget->GetInfo()->fX + GUN_ICX;
-		m_Rc.bottom = m_pTarget->GetInfo()->fY + GUN_ICY*3/2.f;
-	}
+{		
+	float fPushx = 10;
+	if (m_idir < 1)
+		fPushx = 10;
 	else
-	{
-		m_Rc.left = m_pTarget->GetInfo()->fX - GUN_ICX;
-		m_Rc.top = m_pTarget->GetInfo()->fY + GUN_ICY / 2;;
-		m_Rc.right = m_pTarget->GetInfo()->fX;
-		m_Rc.bottom = m_pTarget->GetInfo()->fY + GUN_ICY * 3 / 2.f;
-	}
+		fPushx = -10;
 
+	m_Rc.left	= m_pTarget->GetInfo()->fX - GUN_ICX / 2 + fPushx;
+	m_Rc.top = m_pTarget->GetInfo()->fY - (GUN_ICY/5.f);
+	m_Rc.right	= m_pTarget->GetInfo()->fX + GUN_ICX / 2 + fPushx;
+	m_Rc.bottom = m_pTarget->GetInfo()->fY + (GUN_ICY/5.f)*4;
 
 	m_tInfo.fX = m_pTarget->GetInfo()->fX;
 	m_tInfo.fY = m_pTarget->GetInfo()->fY;
 }
-
-void CGun::SetPoints(float Radian)
-{
-	POINT temp0, temp1, temp2;
-	if (0 < m_idir)
-	{
-		temp0.x = GUN_ICX;
-		temp0.y = 0;
-		temp1.x = 0;
-		temp1.y = 0;
-		temp2.x = 0;
-		temp2.y = GUN_ICY;
-
-		m_pPoint[0].x = temp0.x*cosf(Radian) - temp0.y*sinf(Radian);
-		m_pPoint[0].y = temp0.x*sinf(Radian) + temp0.y*cosf(Radian);
-		m_pPoint[1].x = temp1.x*cosf(Radian) - temp1.y*sinf(Radian);
-		m_pPoint[1].y = temp1.x*sinf(Radian) + temp1.y*cosf(Radian);
-		m_pPoint[2].x = temp2.x*cosf(Radian) - temp2.y*sinf(Radian);
-		m_pPoint[2].y = temp2.x*sinf(Radian) + temp2.y*cosf(Radian);
-	}
-	else
-	{
-		temp0.x = 0;
-		temp0.y = 0;
-		temp1.x = GUN_ICX;
-		temp1.y = 0;
-		temp2.x = 0;
-		temp2.y = GUN_ICY;
-
-		m_pPoint[0].x = temp0.x*cosf(Radian) - temp0.y*sinf(Radian);
-		m_pPoint[0].y = temp0.x*sinf(Radian) + temp0.y*cosf(Radian);
-		m_pPoint[1].x = temp1.x*cosf(Radian) - temp1.y*sinf(Radian);
-		m_pPoint[1].y = temp1.x*sinf(Radian) + temp1.y*cosf(Radian);
-		m_pPoint[2].x = temp2.x*cosf(Radian) - temp2.y*sinf(Radian);
-		m_pPoint[2].y = temp2.x*sinf(Radian) + temp2.y*cosf(Radian);
-
-		//temp0.x = GUN_ICX;
-		//temp0.y = GUN_ICX;
-		//temp1.x = 2 * GUN_ICX;
-		//temp1.y = GUN_ICX;
-		//temp2.x = GUN_ICX;
-		//temp2.y = 2 * GUN_ICX;
-
-		//m_pPoint[0].x = temp0.x*cosf(Radian) - temp0.y*sinf(Radian);
-		//m_pPoint[0].y = temp0.x*sinf(Radian) + temp0.y*cosf(Radian);
-		//m_pPoint[1].x = temp1.x*cosf(Radian) - temp1.y*sinf(Radian);
-		//m_pPoint[1].y = temp1.x*sinf(Radian) + temp1.y*cosf(Radian);
-		//m_pPoint[2].x = temp2.x*cosf(Radian) - temp2.y*sinf(Radian);
-		//m_pPoint[2].y = temp2.x*sinf(Radian) + temp2.y*cosf(Radian);
-	}
-
-}
-
-
 
 CGun::~CGun()
 {
@@ -108,30 +52,31 @@ CGun::~CGun()
 
 int CGun::Ready_GameObject()
 {
-	m_pPoint = new POINT[3];
-	m_pPoint[0].x = 0;
-	m_pPoint[0].y = 0;
-	m_pPoint[1].x = 0;
-	m_pPoint[1].y = 0;
-	m_pPoint[2].x = 0;
-	m_pPoint[2].y = 0;
+	m_tGunInfo.Name = ITEM::MACHINGUN;
 	m_idir = m_pTarget->GetDir();
+	m_tGunInfo.fBulletCoolTime = 30;
+	m_tGunInfo.fBulletDist = 400;
+	m_tGunInfo.fBulletTime = GetTickCount();
 	if (0 > m_pTarget->GetDir())
 	{
 		m_idir = m_pTarget->GetDir();
-		m_hGunDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"MuchineGun(R)");
+		m_hGunDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Player_machinegun");
 	}
 	else
 	{
 		m_idir = m_pTarget->GetDir();
-		m_hGunDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"MuchineGun(L)");
+		m_hGunDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Player_machinegun");
 	}
 	return Function_Pass;
 }
 
 int CGun::Render_GameObject(HDC hdc)
 {
-	GdiTransparentBlt(hdc, m_Rc.left, m_Rc.top, GUN_ICX, GUN_ICY, m_hGunDC, 0, 0, GUN_ICX, GUN_ICY, bmi_BackGround);	
+	if (m_pTarget->Get_GunAni().iStart % 36 == 0)
+		m_pTarget->Set_GunAni()->iStart = 0;
+	if (m_iState == DEAD)
+		return Function_Fail;
+	GdiTransparentBlt(hdc, m_Rc.left + CScrollManeger::Get_ScrollX(), m_Rc.top + CScrollManeger::Get_ScrollY(), GUN_ICX, GUN_ICY, m_hGunDC, m_pTarget->Set_GunAni()->iStart*GUN_ICX, 0, GUN_ICX, GUN_ICY, bmi_BackGround);
 	return Function_Pass;
 }
 
@@ -140,16 +85,15 @@ int CGun::Update_GameObject()
 	if (0 > m_pTarget->GetDir())
 	{
 		m_idir = m_pTarget->GetDir();
-		m_hGunDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"MuchineGun(R)");
+		m_hGunDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Player_machinegun");
 	}
 	else
 	{
 		m_idir = m_pTarget->GetDir();
-		m_hGunDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"MuchineGun(L)");
+		m_hGunDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Player_machinegun");
 	}
-	CheckMouseDir();
 	UpdateGunRect();
-//	SetPoints(m_tInfo.fAngle);
+	m_tInfo.fAngle = m_pTarget->GetInfo()->fAngle;
 	return Function_Pass;
 }
 

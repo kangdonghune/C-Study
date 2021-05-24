@@ -6,14 +6,29 @@ public:
 	virtual ~CGameObject();
 
 public:
-	const G_INFO* GetInfo() { return &m_tInfo; }
+	const RECT GetHitBox() { return m_rcHitBox; }
+	const GAMEOBJINFO* GetInfo() { return &m_tInfo; }
 	const int GetState() { return m_iState; }
-	const RECT* GetRect() { return &m_Rc; }
-	void SetInfo(G_INFO* pInfo) { m_tInfo = *pInfo; }
-	void SetAngle(float Angle) { m_tInfo.fAngle = Angle; }
-	void UpdateRect();
-	float CheckMouseDir();
+	const RECT GetRect() { return m_Rc; }
 	int GetDir() { return m_idir; }
+	const ANIINFO Get_GunAni() { return m_tGunAni; }
+	GUNINFO* Get_GunInfo() { return &m_tGunInfo; }
+	ANIINFO* Set_GunAni() { return &m_tGunAni; }
+	void SetState(int State) { m_iState = State; }
+	void SetInfo(GAMEOBJINFO* pInfo) { m_tInfo = *pInfo; }
+	GAMEOBJINFO* SetInfo() { return &m_tInfo; }
+	void SetPos(float x, float y) { m_tInfo.fX = x; m_tInfo.fY = y; }
+	void SetDir();
+	void SetAngle(float Angle) { m_tInfo.fAngle = Angle; }
+	void SetDead() { m_iState = DEAD; }
+	void SetDemage(CGameObject* pTarget) { pTarget->SetInfo()->iHP -= m_tInfo.iDamege; }
+	CGameObject* GetTarget() { return m_pTarget; }
+
+	void UpdateRect();
+	
+	float CheckTargetDir(CGameObject* pTarget);
+	float CheckMouseDir();
+	void  AngleToTarget(float targetX, float targetY) { m_tInfo.fAngle = atan2f((targetY - m_tInfo.fY), (targetX - m_tInfo.fX)); }
 public:
 	virtual int Ready_GameObject() = 0;
 	virtual int Render_GameObject(HDC hdc) = 0;
@@ -22,14 +37,17 @@ public:
 	virtual int Release_GameObject() = 0;
 
 protected:
-	G_INFO m_tInfo;
+	GAMEOBJINFO m_tInfo;
 	RECT m_Rc;
+	RECT m_rcHitBox;
 	unsigned int m_iState;
 	unsigned int m_iOldState;
 	ANIINFO m_tAni;
+	ANIINFO m_tGunAni;
 	POINT m_tMouse;
 	HDC m_ObjectDc;
 	int m_idir;
-
+	GUNINFO m_tGunInfo;
+	CGameObject* m_pTarget;
 };
 

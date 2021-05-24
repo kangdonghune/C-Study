@@ -80,6 +80,7 @@ int CBitmapManeger::Release_BitmapManeger()
 
 int CBitmapManeger::Ready_BitmapManeger()
 {
+	//ÇÃ·¹ÀÌ¾î ¹«ºù
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_idle(L)", L"../Image/Player_idle(L).bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_idle(R)", L"../Image/Player_idle(R).bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_walk(L)", L"../Image/Player_walk(L).bmp");
@@ -89,18 +90,77 @@ int CBitmapManeger::Ready_BitmapManeger()
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_run(R)", L"../Image/Player_run(R).bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_melee(L)", L"../Image/Player_melee(L).bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_melee(R)", L"../Image/Player_melee(R).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_Dead(L)", L"../Image/Player_Dead(L).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_Dead(R)", L"../Image/Player_Dead(R).bmp");
+
+	//¹«±â
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"MuchineGun(L)", L"../Image/Player_machinegun(L).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_machinegun", L"../Image/Player_machinegun.bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"MuchineGun(R)", L"../Image/Player_machinegun(R).bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"MuchineGun_back", L"../Image/Player_machinegun_back.bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"MuchineGun_back2", L"../Image/Player_machinegun_back.bmp");
-	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_bullet", L"../Image/Player_bullet.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_gun", L"../Image/Boss_gun.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Grenade", L"../Image/Grenade.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Grenade_boom", L"../Image/Grenade_boom.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"pistol", L"../Image/pistol.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"shotgun", L"../Image/shotgun.bmp");
+
+	//¾ÆÀÌÅÛ ÆË¾÷
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Pistol_Pop", L"../Image/Pistol_Pop.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"machinegun_Pop", L"../Image/machinegun_Pop.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"shotgun_PoP", L"../Image/shotgun_PoP.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Grenade_Pop", L"../Image/Grenade_Pop.bmp");
+
+	//ÃÑ¾Ë
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_bullet", L"../Image/Player_bullet.bmp"); //¼¦°Ç¿ë
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Pistol_Bullet", L"../Image/Pistol_Bullet.bmp");// ¹Ýº¹X
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Machgun_bullet", L"../Image/Machgun_bullet.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_Bullet", L"../Image/Boss_Bullet.bmp");
+
+	//¸Ê
+	
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"BackBuffer", L"../Image/BackGround.bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"DoubleBuff", L"../Image/BackGround.bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"floor_desert", L"../Image/floor_desert.bmp");
-	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Ceiling_desert", L"../Image/desert_tileset.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Ceiling_desert", L"../Image/Ceiling_desert.bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"desert_wall", L"../Image/desert_wall.bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Celling_back", L"../Image/Celling_back.bmp");
 	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"menu_main", L"../Image/menu_main.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Portal", L"../Image/Portal.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"PushButton", L"../Image/PushButton.bmp");
+	
+	//¸ó½ºÅÍ
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Turtle_idle(L)", L"../Image/Turtle_idle(L).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Turtle_idle(R)", L"../Image/Turtle_idle(R).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Turtle_walk(L)", L"../Image/Turtle_walk(L).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Turtle_walk(R)", L"../Image/Turtle_walk(R).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Turtle_Dead(L)", L"../Image/Turtle_Dead(L).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Turtle_Dead(R)", L"../Image/Turtle_Dead(R).bmp");
+
+	//º¸½º
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_idle(L)", L"../Image/Boss_idle(L).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_idle(R)", L"../Image/Boss_idle(R).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_dead(L)", L"../Image/Boss_dead(L).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_dead(R)", L"../Image/Boss_dead(R).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_walk(L)", L"../Image/Boss_walk(L).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_walk(R)", L"../Image/Boss_walk(R).bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_Egg", L"../Image/Boss_Egg.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_egg_crack", L"../Image/Boss_egg_crack.bmp");
+
+	//ÀÌÆåÆ®
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Main_Logo", L"../Image/Main_Logo.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Check_Arrow", L"../Image/Check_Arrow.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"PressEnter", L"../Image/PressEnter.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Stage1_effect", L"../Image/Stage1_effect.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"StageBoss_effect", L"../Image/StageBoss_effect.bmp");
+
+
+	//Ã¼·Â
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_HpFace", L"../Image/Player_HpFace.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Player_HpBar", L"../Image/Player_HpBar.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_HpBar", L"../Image/Boss_HpBar.bmp");
+	CBitmapManeger::Get_BitmapManeger()->Insert_BitmapManeger(L"Boss_HPFace", L"../Image/Boss_HPFace.bmp");
+
 
 	return Function_Pass;	
 }

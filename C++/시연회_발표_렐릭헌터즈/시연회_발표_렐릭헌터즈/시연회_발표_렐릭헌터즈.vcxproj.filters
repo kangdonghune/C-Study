@@ -33,9 +33,6 @@
     <Filter Include="소스 파일\01.game-object\01.player">
       <UniqueIdentifier>{12057065-3e63-4b92-93bc-e65a489c07a4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="소스 파일\01.game-object\01.player\00.playergun">
-      <UniqueIdentifier>{c976569a-9f11-461c-8f45-4f22b89b50e8}</UniqueIdentifier>
-    </Filter>
     <Filter Include="소스 파일\01.game-object\02.Bullet">
       <UniqueIdentifier>{6c087371-ff82-41fc-b61a-d968cc324874}</UniqueIdentifier>
     </Filter>
@@ -81,6 +78,69 @@
     <Filter Include="소스 파일\02.mapobject\02.Wall">
       <UniqueIdentifier>{03ae99e9-c3fa-4a3b-81c7-483f2e9f35e3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\01.game-object\04.Gun">
+      <UniqueIdentifier>{2c6b6a7b-160d-4584-9467-4efdd46aa50b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\03.Monster\Maneger">
+      <UniqueIdentifier>{d78fd224-6b5e-4d30-a11f-14e0a7f2cbd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\03.Monster\00.Turtle">
+      <UniqueIdentifier>{7e80ad9d-aab1-494e-af70-bb368bdb86ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Scene\01.Stage\Stage1">
+      <UniqueIdentifier>{630b1174-07fe-4c4f-ada4-74a0bdf10815}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\03.Scene\01.Stage\StageBoss">
+      <UniqueIdentifier>{897a1ecf-f266-41b0-bd83-734b7c98eb8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\03.Monster\01.Boss">
+      <UniqueIdentifier>{c001c302-53fd-4333-964e-0284d32e9c72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.mapobject\03.Pportal">
+      <UniqueIdentifier>{93675d14-dd63-409f-98e4-34da6bfc9bea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\02.mapobject\05.PushButton">
+      <UniqueIdentifier>{9a964d3b-461a-4674-b269-0cc5b712657f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\05.Grenade">
+      <UniqueIdentifier>{30e34a6e-1462-4333-864a-9f4d00d74d5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\04.Gun\00.BossGun">
+      <UniqueIdentifier>{2ababd09-3847-4629-bf17-22deaafd2875}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\04.Gun\01.machine gun">
+      <UniqueIdentifier>{b6343865-4c62-4508-9d48-2a794de7a410}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\04.Gun\02.pistol">
+      <UniqueIdentifier>{a19ac0ce-4260-45ad-a03e-135067dd7da8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\04.Gun\03.shotgun">
+      <UniqueIdentifier>{ffa6de63-0c82-4e4f-82e7-10249f5cc5db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05.Logo">
+      <UniqueIdentifier>{c41c6598-1726-4e22-8d3f-230ead8c447b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05.Logo\Manager">
+      <UniqueIdentifier>{7767fd4d-c4d0-401b-994d-4676a16dc62d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\05.Logo\StageLogo">
+      <UniqueIdentifier>{db2013d4-0667-4000-a415-287a45852634}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\06.HPbar">
+      <UniqueIdentifier>{bca146b7-0dff-4612-8cc8-2fbf3418fad7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\06.HPbar\00.PlayerHp">
+      <UniqueIdentifier>{cc9df3f4-ecb1-4e03-8b0f-4a22e64c0844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\06.HPbar\01.BossHp">
+      <UniqueIdentifier>{340f3b45-e6ee-4fb1-bbf9-83c92706c589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\06.Wave">
+      <UniqueIdentifier>{02d4bd61-a58b-4e8f-8954-0b44d1a31c2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\01.game-object\07.Item">
+      <UniqueIdentifier>{7b804779-f94c-4af6-8040-21b664cca216}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -125,9 +185,6 @@
     <ClInclude Include="GameObjectManeger.h">
       <Filter>소스 파일\01.game-object\00.maneger</Filter>
     </ClInclude>
-    <ClInclude Include="Gun.h">
-      <Filter>소스 파일\01.game-object\01.player\00.playergun</Filter>
-    </ClInclude>
     <ClInclude Include="Player_Bullet.h">
       <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
     </ClInclude>
@@ -158,14 +215,77 @@
     <ClInclude Include="SceneManeger.h">
       <Filter>소스 파일\03.Scene\Maneger</Filter>
     </ClInclude>
-    <ClInclude Include="Stage.h">
-      <Filter>소스 파일\03.Scene\01.Stage</Filter>
-    </ClInclude>
     <ClInclude Include="MainMenu.h">
       <Filter>소스 파일\03.Scene\02.MainMenu</Filter>
     </ClInclude>
     <ClInclude Include="Wall.h">
       <Filter>소스 파일\02.mapobject\02.Wall</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderManeger.h">
+      <Filter>소스 파일\097.Collider_Maneger</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>소스 파일\01.game-object\03.Monster</Filter>
+    </ClInclude>
+    <ClInclude Include="Turtle.h">
+      <Filter>소스 파일\01.game-object\03.Monster\00.Turtle</Filter>
+    </ClInclude>
+    <ClInclude Include="MonsterManeger.h">
+      <Filter>소스 파일\01.game-object\03.Monster\Maneger</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>소스 파일\03.Scene\01.Stage\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="BossStage.h">
+      <Filter>소스 파일\03.Scene\01.Stage\StageBoss</Filter>
+    </ClInclude>
+    <ClInclude Include="Boss.h">
+      <Filter>소스 파일\01.game-object\03.Monster\01.Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Portal.h">
+      <Filter>소스 파일\02.mapobject\03.Pportal</Filter>
+    </ClInclude>
+    <ClInclude Include="PushButton.h">
+      <Filter>소스 파일\02.mapobject\05.PushButton</Filter>
+    </ClInclude>
+    <ClInclude Include="Grenade.h">
+      <Filter>소스 파일\01.game-object\05.Grenade</Filter>
+    </ClInclude>
+    <ClInclude Include="BossGun.h">
+      <Filter>소스 파일\01.game-object\04.Gun\00.BossGun</Filter>
+    </ClInclude>
+    <ClInclude Include="Logo.h">
+      <Filter>소스 파일\05.Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="StageLogo.h">
+      <Filter>소스 파일\05.Logo\StageLogo</Filter>
+    </ClInclude>
+    <ClInclude Include="HpBar.h">
+      <Filter>소스 파일\01.game-object\06.HPbar</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerHP.h">
+      <Filter>소스 파일\01.game-object\06.HPbar\00.PlayerHp</Filter>
+    </ClInclude>
+    <ClInclude Include="BossHPBar.h">
+      <Filter>소스 파일\01.game-object\06.HPbar\01.BossHp</Filter>
+    </ClInclude>
+    <ClInclude Include="Wave.h">
+      <Filter>소스 파일\06.Wave</Filter>
+    </ClInclude>
+    <ClInclude Include="Gun.h">
+      <Filter>소스 파일\01.game-object\04.Gun\01.machine gun</Filter>
+    </ClInclude>
+    <ClInclude Include="Pistol.h">
+      <Filter>소스 파일\01.game-object\04.Gun\02.pistol</Filter>
+    </ClInclude>
+    <ClInclude Include="ShotGun.h">
+      <Filter>소스 파일\01.game-object\04.Gun\03.shotgun</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>소스 파일\01.game-object\07.Item</Filter>
+    </ClInclude>
+    <ClInclude Include="Guns.h">
+      <Filter>소스 파일\01.game-object\04.Gun</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -178,9 +298,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>소스 파일\00.main</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>소스 파일\01.game-object</Filter>
-    </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>소스 파일\01.game-object\01.player</Filter>
     </ClCompile>
@@ -190,14 +307,8 @@
     <ClCompile Include="GameObjectManeger.cpp">
       <Filter>소스 파일\01.game-object\00.maneger</Filter>
     </ClCompile>
-    <ClCompile Include="Gun.cpp">
-      <Filter>소스 파일\01.game-object\01.player\00.playergun</Filter>
-    </ClCompile>
     <ClCompile Include="C_Bitmap.cpp">
       <Filter>소스 파일\096.bitmap</Filter>
-    </ClCompile>
-    <ClCompile Include="Player_Bullet.cpp">
-      <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
     </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>소스 파일\02.mapobject\00.Tile</Filter>
@@ -223,14 +334,83 @@
     <ClCompile Include="ScrollManeger.cpp">
       <Filter>소스 파일\04.Scroll</Filter>
     </ClCompile>
-    <ClCompile Include="Stage.cpp">
-      <Filter>소스 파일\03.Scene\01.Stage</Filter>
-    </ClCompile>
     <ClCompile Include="MainMenu.cpp">
       <Filter>소스 파일\03.Scene\02.MainMenu</Filter>
     </ClCompile>
     <ClCompile Include="Wall.cpp">
       <Filter>소스 파일\02.mapobject\02.Wall</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderManeger.cpp">
+      <Filter>소스 파일\097.Collider_Maneger</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>소스 파일\01.game-object\03.Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Turtle.cpp">
+      <Filter>소스 파일\01.game-object\03.Monster\00.Turtle</Filter>
+    </ClCompile>
+    <ClCompile Include="MonsterManeger.cpp">
+      <Filter>소스 파일\01.game-object\03.Monster\Maneger</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>소스 파일\03.Scene\01.Stage\Stage1</Filter>
+    </ClCompile>
+    <ClCompile Include="BossStage.cpp">
+      <Filter>소스 파일\03.Scene\01.Stage\StageBoss</Filter>
+    </ClCompile>
+    <ClCompile Include="Boss.cpp">
+      <Filter>소스 파일\01.game-object\03.Monster\01.Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Portal.cpp">
+      <Filter>소스 파일\02.mapobject\03.Pportal</Filter>
+    </ClCompile>
+    <ClCompile Include="PushButton.cpp">
+      <Filter>소스 파일\02.mapobject\05.PushButton</Filter>
+    </ClCompile>
+    <ClCompile Include="Grenade.cpp">
+      <Filter>소스 파일\01.game-object\05.Grenade</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>소스 파일\01.game-object</Filter>
+    </ClCompile>
+    <ClCompile Include="BossGun.cpp">
+      <Filter>소스 파일\01.game-object\04.Gun\00.BossGun</Filter>
+    </ClCompile>
+    <ClCompile Include="Logo.cpp">
+      <Filter>소스 파일\05.Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="StageLogo.cpp">
+      <Filter>소스 파일\05.Logo\StageLogo</Filter>
+    </ClCompile>
+    <ClCompile Include="HpBar.cpp">
+      <Filter>소스 파일\01.game-object\06.HPbar</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerHP.cpp">
+      <Filter>소스 파일\01.game-object\06.HPbar\00.PlayerHp</Filter>
+    </ClCompile>
+    <ClCompile Include="BossHPBar.cpp">
+      <Filter>소스 파일\01.game-object\06.HPbar\01.BossHp</Filter>
+    </ClCompile>
+    <ClCompile Include="Wave.cpp">
+      <Filter>소스 파일\06.Wave</Filter>
+    </ClCompile>
+    <ClCompile Include="Gun.cpp">
+      <Filter>소스 파일\01.game-object\04.Gun\01.machine gun</Filter>
+    </ClCompile>
+    <ClCompile Include="Pistol.cpp">
+      <Filter>소스 파일\01.game-object\04.Gun\02.pistol</Filter>
+    </ClCompile>
+    <ClCompile Include="ShotGun.cpp">
+      <Filter>소스 파일\01.game-object\04.Gun\03.shotgun</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>소스 파일\01.game-object\07.Item</Filter>
+    </ClCompile>
+    <ClCompile Include="Guns.cpp">
+      <Filter>소스 파일\01.game-object\04.Gun</Filter>
+    </ClCompile>
+    <ClCompile Include="Player_bullet.cpp">
+      <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -250,5 +430,10 @@
     <Text Include="ReadMe.txt">
       <Filter>소스 파일\099.default</Filter>
     </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cursor1.cur">
+      <Filter>리소스 파일</Filter>
+    </None>
   </ItemGroup>
 </Project>

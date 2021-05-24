@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Celling.h"
 #include "BitmapManeger.h"
-
+#include "ScrollManeger.h"
 CCelling::CCelling()
 {
 }
@@ -39,20 +39,17 @@ int CCelling::Ready_MapObject()
 	m_tMapInfo.ObjType = MAPOBJECT::CELLING;
 	m_tMapInfo.iCX = Celling_CX;
 	m_tMapInfo.iCY = Celling_CY;
-	m_tMapInfo.Objfeature = MAPOBJECTTYPE::DONEPASS;
-	m_tMapInfo.iCellingNum = 0;
+	m_tMapInfo.Objfeature = MAPOBJECTTYPE::NONEPASS;
+
 	return Function_Pass;
 }
 
 int CCelling::Render_MapObject(HDC hdc)
 {
 	HDC m_hmapDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Ceiling_desert");
-	HDC hTempDC = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Celling_back");
-	BitBlt(hTempDC, 0, 0, 2*m_tMapInfo.iCX, 2*m_tMapInfo.iCY, m_hmapDC,(m_tMapInfo.iCellingNum%3)* 2 * m_tMapInfo.iCX,(m_tMapInfo.iCellingNum/3)* 2 * m_tMapInfo.iCY, SRCCOPY);
-	GdiTransparentBlt(hdc, m_Rc.left, m_Rc.top, m_tMapInfo.iCX, m_tMapInfo.iCY, hTempDC, 0, 0, 2 * m_tMapInfo.iCX, 2 * m_tMapInfo.iCY, bmi_BackGround);
-	return Function_Pass;
+	GdiTransparentBlt(hdc, m_Rc.left+ CScrollManeger::Get_ScrollX(), m_Rc.top + CScrollManeger::Get_ScrollY() , m_tMapInfo.iCX, m_tMapInfo.iCY, m_hmapDC, (m_tMapInfo.iCellingNum%3)*m_tMapInfo.iCX, (m_tMapInfo.iCellingNum / 3)*m_tMapInfo.iCY, m_tMapInfo.iCX, m_tMapInfo.iCY, bmi_BackGround);
+	return Function_Pass;			
 }
-
 int CCelling::Update_MapObject()
 {
 	Update_Rect();

@@ -6,10 +6,15 @@ public:
 	virtual ~CMapObject();
 
 public:
-	const M_INFO* GetMInfo() { return &m_tMapInfo;}
-	M_INFO* SetMINFO() { return &m_tMapInfo; }
+	const MAPINFO* GetMInfo() { return &m_tMapInfo;}
+	const RECT GetRect() { return m_Rc; }
+	
+	MAPINFO* SetMINFO() { return &m_tMapInfo; }
+	void SetDead() { m_iState = DEAD; }
+
 	void Update_Rect();
 	const int& GetState() { return m_iState; }
+
 public:
 	virtual int Ready_MapObject() = 0;
 	virtual int Render_MapObject(HDC hdc) = 0;
@@ -18,7 +23,7 @@ public:
 	virtual int Release_MapObject() = 0;
 
 protected:
-	M_INFO m_tMapInfo;
+	MAPINFO m_tMapInfo;
 	RECT m_Rc;
 	int m_iState;
 };

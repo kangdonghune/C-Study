@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "시연회_발표_렐릭헌터즈.h"
 #include "Main.h"
+#include <Windows.h>
 
 #define MAX_LOADSTRING 100
 
@@ -12,7 +13,7 @@ HINSTANCE hInst;                                // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 HWND g_HWND;
-
+int	 g_iFrame = 0;
 // 이 코드 모듈에 들어 있는 함수의 정방향 선언입니다.
 ATOM                MyRegisterClass(HINSTANCE hInstance);
 BOOL                InitInstance(HINSTANCE, int);
@@ -45,14 +46,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     MSG msg;
 	msg.message = WM_NULL;
 	DWORD dwOldTime = GetTickCount();
+
 	CMain* pMain = CMain::Create();
+
 	if (nullptr == pMain)
 	{
 		Delete_Dynamic(pMain);
 	}
 	while (WM_QUIT != msg.message)
 	{
-
+	
 		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
 		{
 
@@ -63,13 +66,15 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 			}
 		}
 
-		if (dwOldTime + 20 < GetTickCount())
+		if (dwOldTime < GetTickCount())
 		{
 			pMain->Update_Main();
 			pMain->LateUpdate_Main();
 			pMain->Render_Main();
 			dwOldTime = GetTickCount();
 		}
+	
+	
 	}
 	Delete_Dynamic(pMain);
 	return (int)msg.wParam;
@@ -94,9 +99,9 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.cbWndExtra     = 0;
     wcex.hInstance      = hInstance;
     wcex.hIcon          = LoadIcon(hInstance, MAKEINTRESOURCE(IDI___));
-    wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
+    wcex.hCursor        = LoadCursor(hInstance, MAKEINTRESOURCE(IDC_CURSOR1));
     wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
-    wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC___);
+	wcex.lpszMenuName	= NULL;
     wcex.lpszClassName  = szWindowClass;
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
@@ -117,8 +122,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
    RECT rc = { 0,0, WINCX, WINCY };
+   AdjustWindowRect(&rc, WS_OVERLAPPEDWINDOW, FALSE);
    HWND hWnd = CreateWindowW(szWindowClass, L"Relic_Hunters", WS_OVERLAPPEDWINDOW,
-	   50, 20, rc.right - rc.left, rc.bottom - rc.top, nullptr, nullptr, hInstance, nullptr);
+	   260, 100, rc.right - rc.left, rc.bottom - rc.top, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {

@@ -6,7 +6,13 @@
 #include "GameObjectManeger.h"
 #include "Player_Bullet.h"
 #include "ScrollManeger.h"
+#include "MapObjectManeger.h"
+#include "Grenade.h"
+#include "SceneManeger.h"
+#include "Pistol.h"
+
 CPlayer::CPlayer()
+	:m_bGrenadeOn(false)
 {
 }
 
@@ -29,25 +35,44 @@ CGameObject * CPlayer::Create()
 
 void CPlayer::IsOffset()
 {
-	float fScrollY = CScrollManeger::Get_ScrollY();
+	float RunSpeed = 1.f;
 	float fScrollX = CScrollManeger::Get_ScrollX();
+	float fScrollY = CScrollManeger::Get_ScrollY();
 	float X = m_tInfo.fX + fScrollX;
 	float Y = m_tInfo.fY + fScrollY;
-	if ((WINCX >> 1) + 200 < X)
-		CScrollManeger::Set_ScrollX(-m_tInfo.fSpeed);
-	if ((WINCX >> 1) - 200 > X)
-		CScrollManeger::Set_ScrollX(m_tInfo.fSpeed);
-	if ((WINCY >> 1) + 100 < Y)
-		CScrollManeger::Set_ScrollY(-m_tInfo.fSpeed);
-	if ((WINCY >> 1) - 100 > Y)
-		CScrollManeger::Set_ScrollY(m_tInfo.fSpeed);
-
-	int i = 0;
-	int j = 0;
+	if (GetState() == RUN)
+	{
+		RunSpeed = 1.25f;
+	}
+	// x 200~600 y 200~400 사이에 플레이어는 고정하고 그 범위 벗어난 만큼 스크롤값 부여
+	if ((WINCX / 2 + 30) < X)
+		CScrollManeger::Set_ScrollX(-1*m_tInfo.fSpeed*RunSpeed);
+	if ((WINCX / 2 - 30) > X)
+	{
+		if ((WINCX / 2 - 30) > m_tInfo.fX)
+		{
+			CScrollManeger::Set_ScrollX(0);
+		}
+		else
+			CScrollManeger::Set_ScrollX(m_tInfo.fSpeed*RunSpeed);
+	}
+	if ((WINCY / 2 + 30) < Y)
+		CScrollManeger::Set_ScrollY(-1 * m_tInfo.fSpeed*RunSpeed);
+	if ((WINCY / 2 - 30) > Y)
+	{
+		if ((WINCY / 2 - 30) > m_tInfo.fY)
+		{
+			CScrollManeger::Set_ScrollY(0);
+		}
+		else
+			CScrollManeger::Set_ScrollY(m_tInfo.fSpeed*RunSpeed);
+	}
 }
 
 void CPlayer::Idle()
 {
+
+
 	if (GetAsyncKeyState('A') & 0x8000)
 	{
 		
@@ -75,13 +100,7 @@ void CPlayer::Idle()
 		m_iState = RUN;
 		m_tAni.iStart = 0;
 	}
-	if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
-	{
-		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
-		m_iOldState = m_iState;
-		m_iState = MELEE;
-		m_tAni.iStart = 0;
-	}
+	
 }
 
 void CPlayer::Walk()
@@ -90,7 +109,7 @@ void CPlayer::Walk()
 	if (GetAsyncKeyState('A') & 0x8000)
 	{
 		m_tInfo.fX -= m_tInfo.fSpeed;
-		bIsChange = true;
+		bIsChange = true;	
 	}
 
 	if (GetAsyncKeyState('D') & 0x8000)
@@ -115,20 +134,13 @@ void CPlayer::Walk()
 		m_tAni.iStart = 0;
 		return;
 	}
-	if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
-	{
-		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
-		m_iOldState = m_iState;
-		m_iState = MELEE;
-		m_tAni.iStart = 0;
-		return;
-	}
 
 	if (bIsChange == false)
 	{
 		m_iState = IDLE;
 		m_tAni.iStart = 0;
 	}
+
 }
 
 void CPlayer::Run()
@@ -144,39 +156,32 @@ void CPlayer::Run()
 
 	if (GetAsyncKeyState('A') & 0x8000)
 	{
-		m_tInfo.fX -= m_tInfo.fSpeed * 1.5;
+		m_tInfo.fX -= m_tInfo.fSpeed * 1.25;
 		bIsChange = true;
 	}
 
 	if (GetAsyncKeyState('D') & 0x8000)
 	{
-		m_tInfo.fX += m_tInfo.fSpeed * 1.5;
+		m_tInfo.fX += m_tInfo.fSpeed * 1.25;
 		bIsChange = true;
 	}
 	if (GetAsyncKeyState('S') & 0x8000)
 	{
-		m_tInfo.fY += m_tInfo.fSpeed * 1.5;
+		m_tInfo.fY += m_tInfo.fSpeed * 1.25;
 		bIsChange = true;
 	}
 	if (GetAsyncKeyState('W') & 0x8000)
 	{
-		m_tInfo.fY -= m_tInfo.fSpeed * 1.5;
+		m_tInfo.fY -= m_tInfo.fSpeed * 1.25;
 		bIsChange = true;
 	}
 
-	if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
-	{
-		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
-
-		return;
-	}
 
 	if (bIsChange == false)
 	{
 		m_iState = IDLE;
 		m_tAni.iStart = 0;
 	}
-
 
 }
 
@@ -192,40 +197,21 @@ void CPlayer::Melee()
 
 	if (GetAsyncKeyState(VK_LBUTTON) & 0x0001)
 	{
-		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
+
 		m_iState = m_iOldState;
 		m_tAni.iStart = 0;
 		return;
 	}
 
-	if (GetAsyncKeyState('A') & 0x8000)
-	{
-		m_tInfo.fX -= m_tInfo.fSpeed * 0.7f;
-		bIsChange = true;
-	}
+}
 
-	if (GetAsyncKeyState('D') & 0x8000)
+void CPlayer::ReadyDead()
+{
+	if (m_tAni.iStart > m_tAni.iEnd)
 	{
-		m_tInfo.fX += m_tInfo.fSpeed* 0.7f;
-		bIsChange = true;
+		m_iState = DEAD;
 	}
-	if (GetAsyncKeyState('S') & 0x8000)
-	{
-		m_tInfo.fY += m_tInfo.fSpeed* 0.7f;
-		bIsChange = true;
-	}
-	if (GetAsyncKeyState('W') & 0x8000)
-	{
-		m_tInfo.fY -= m_tInfo.fSpeed* 0.7f;
-		bIsChange = true;
-	}
-
-	if (GetAsyncKeyState(VK_SHIFT) & 0x8000)
-	{
-		m_iState = RUN;
-		m_tAni.iStart = 0;
-		return;
-	}
+	
 }
 
 void CPlayer::CheckState(int State)
@@ -244,31 +230,51 @@ void CPlayer::CheckState(int State)
 	case MELEE:
 		m_tAni.iEnd = 5;
 		break;
+	case READYDEAD:
+		m_tAni.iEnd = 10;
+		break;
 	default:
 		m_iState = DEAD;
 		break;
 	}
+
 }
 
 int CPlayer::CheckPlayerDir()
 {
 	GetCursorPos(&m_tMouse);
 	ScreenToClient(g_HWND, &m_tMouse);
-	return m_tInfo.fX - m_tMouse.x;
+	return m_tInfo.fX - (m_tMouse.x - CScrollManeger::Get_ScrollX());
+}
+
+void CPlayer::UpdateHitBox()
+{
+	m_rcHitBox.left = m_tInfo.fX - PLAYER_HITBOXCX/2;
+	m_rcHitBox.top	= (m_tInfo.fY - PLAYER_HITBOXCY/2);
+	m_rcHitBox.right = m_tInfo.fX + PLAYER_HITBOXCX/2;
+	m_rcHitBox.bottom = m_tInfo.fY + PLAYER_HITBOXCY/2 ;
 }
 
 
 int CPlayer::Ready_GameObject()
 {
-	m_tInfo.fX = 200.f;
-	m_tInfo.fY = 200.f;
+	m_tInfo.fX = 400.f;
+	m_tInfo.fY = 400.f;
 	m_tInfo.iCX = PLAYER_ICX;
 	m_tInfo.iCY = PLAYER_ICY;
 	m_tInfo.fSpeed = PLAYER_SPEED;
 	m_tInfo.fAngle = 0;
+	m_tInfo.iMaxHp = 6000;
+	m_tInfo.iHP = m_tInfo.iMaxHp;
+	m_tInfo.dwTime = GetTickCount();
+	m_tInfo.LimitTime = 180;
 	m_idir = 1;
-	if (!(CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GUN, CGun::Create(this))))
-	return Function_Fail;
+	UpdateHitBox();
+	m_tGunAni.iStart = 0;
+	m_iGunNum = 0;
+	//m_pMyGun = CPistol::Create(this);
+	//if (!(CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GUN, m_pMyGun)))
+	//	return Function_Fail;
 
 	
 	return Function_Pass;
@@ -276,19 +282,38 @@ int CPlayer::Ready_GameObject()
 
 int CPlayer::Render_GameObject(HDC hdc)
 {
-	UpdateRect();
+
+
 	CheckState(m_iState);
-	if (m_tAni.iStart > m_tAni.iEnd)
+	if (m_iState == DEAD)
+		return  Function_Pass;
+	if (m_tAni.iStart > m_tAni.iEnd) 
 		m_tAni.iStart = 0;
-	GdiTransparentBlt(hdc, m_Rc.left, m_Rc.top, PLAYER_ICX, PLAYER_ICY, m_ObjectDc, PLAYER_ICX  * m_tAni.iStart, 0,PLAYER_ICX, PLAYER_ICY, bmi_BackGround);
-	m_tAni.iStart++;
-	
+	GdiTransparentBlt(hdc, m_Rc.left + CScrollManeger::Get_ScrollX(), m_Rc.top + CScrollManeger::Get_ScrollY(), PLAYER_ICX, PLAYER_ICY, m_ObjectDc, PLAYER_ICX  * m_tAni.iStart, 0, PLAYER_ICX, PLAYER_ICY, bmi_BackGround);
+	if(m_tInfo.dwTime +80 < GetTickCount())
+	{
+		m_tAni.iStart++;
+		m_tInfo.dwTime = GetTickCount();
+	}
+
 	return Function_Pass;
 }
 
 int CPlayer::Update_GameObject()
 {
+
+	if (0 >= m_tInfo.iHP)
+	{
+		if (m_iState != READYDEAD)
+		{
+			m_iState = READYDEAD;
+			m_tAni.iStart = 0;
+			m_pMyGun->SetDead();
+		}	
+	}
+		
 	m_idir = CheckPlayerDir();
+
 	switch (m_iState)
 	{
 	case IDLE:
@@ -315,9 +340,60 @@ int CPlayer::Update_GameObject()
 		if (m_idir > 0)
 			m_ObjectDc = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Player_melee(L)");
 		break;
+
+	case READYDEAD:
+		m_ObjectDc = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Player_Dead(R)");
+		ReadyDead();
+		if(m_idir > 0)
+			m_ObjectDc = CBitmapManeger::Get_BitmapManeger()->Get_BitmapDC(L"Player_Dead(L)");
+		break;
+	case DEAD:
+		break;
 	default:
 		break;
 	}
+	IsOffset();
+	UpdateRect();
+	UpdateHitBox();
+	CheckMouseDir();
+	m_tInfo.fAngle = (m_tInfo.fAngle * RADIAN);
+	if (m_tInfo.fAngle < 0)
+		m_tInfo.fAngle = 180 + (180-fabs(m_tInfo.fAngle));
+	m_tGunAni.iStart = m_tInfo.fAngle / 10;
+
+	if (GetAsyncKeyState(VK_LBUTTON) & 0x8000)
+	{
+		if (m_pMyGun == nullptr)
+			return Function_Pass;
+
+		if (dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime + dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletCoolTime < GetTickCount())
+		{
+			CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::PLAYER_BULLET, CPlayer_Bullet::Create(this));
+			dynamic_cast<CGameObject*>(m_pMyGun)->Get_GunInfo()->fBulletTime = GetTickCount();
+			CSceneManeger::Get_SceneManeger()->SetWaveGunRebounde(true);
+		}
+	}
+
+	if (GetAsyncKeyState('Q') & 0x0001 && m_bGrenadeOn)
+	{
+		GetCursorPos(&m_tMouse);
+		ScreenToClient(g_HWND, &m_tMouse);
+		CGameObjectManeger::Get_GameObjectManeger()->Add_GameObject(GAMEOBJECT::GRENADE, CGrenade::Create(this, m_tMouse));
+	}
+
+	if (GetAsyncKeyState('R') & 0x0001)
+	{
+		int GunsSize = m_vecGuns.size(); //한개라도 있으면 1;
+		if (!m_vecGuns.empty())
+		{
+			m_pMyGun = m_vecGuns[m_iGunNum];
+			if (m_iGunNum < GunsSize-1)
+				m_iGunNum++;
+			else
+				m_iGunNum = 0;
+		}
+	}
+		
 	return Function_Pass;
 }
 
@@ -328,5 +404,10 @@ int CPlayer::LateUpdate_GameObject()
 
 int CPlayer::Release_GameObject()
 {
+	if (nullptr != m_pMyGun)
+	{
+		Delete_Dynamic(m_pMyGun);
+		m_pMyGun = nullptr;
+	}
 	return Function_Pass;
 }

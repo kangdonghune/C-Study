@@ -3,6 +3,11 @@
 #include "MapObject.h"
 #include "Tile.h"
 #include "Celling.h"
+#include "ScrollManeger.h"
+#include "GameObject.h"
+#include "GameObjectManeger.h"
+#include "ColliderManeger.h"
+#include "Wall.h"
 
 CMapObjectManeger* CMapObjectManeger::m_pInstatnce = nullptr;
 CMapObjectManeger::CMapObjectManeger()
@@ -30,17 +35,17 @@ void CMapObjectManeger::Save_MapObjectManager()
 	{
 		for (auto& pObject : m_pMapObjectList[i])
 		{
-			WriteFile(hFile, pObject->GetMInfo(), sizeof(M_INFO), &dwByte, nullptr);
+			WriteFile(hFile, pObject->GetMInfo(), sizeof(MAPINFO), &dwByte, nullptr);
 		}
 	}
 	CloseHandle(hFile);
 	
-	MessageBox(nullptr, L"저장완료", L"저장시스템", MB_OK);
+	//MessageBox(nullptr, L"저장완료", L"저장시스템", MB_OK);
 }
 
-void CMapObjectManeger::Load_MapObjectManager()
+void CMapObjectManeger::Load_MapObjectManager(TCHAR* pFilePath)
 {
-	HANDLE hFile = CreateFile(L"../Data/MapData.dat", GENERIC_READ, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+	HANDLE hFile = CreateFile(pFilePath, GENERIC_READ, 0, 0, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
 	if (INVALID_HANDLE_VALUE == hFile)
 		return;
 
@@ -54,11 +59,11 @@ void CMapObjectManeger::Load_MapObjectManager()
 		m_pMapObjectList[i].shrink_to_fit();
 	}
 	DWORD dwByte = 0;
-	M_INFO tMInfo{};
+	MAPINFO tMInfo{};
 	POINT pt;
 	while (true)
 	{
-		ReadFile(hFile, &tMInfo, sizeof(M_INFO), &dwByte, nullptr);
+		ReadFile(hFile, &tMInfo, sizeof(MAPINFO), &dwByte, nullptr);
 		if (0 == dwByte)
 			break;
 		switch (tMInfo.ObjType)
@@ -72,15 +77,32 @@ void CMapObjectManeger::Load_MapObjectManager()
 			pt.x = tMInfo.fX;
 			pt.y = tMInfo.fY;
 			m_pInstatnce->Insert_MapObject(MAPOBJECT::CELLING, CCelling::Create(pt));
+			m_pInstatnce->Get_MapManeger()->Get_ObjectVector(MAPOBJECT::CELLING)->back()->SetMINFO()->iCellingNum = tMInfo.iCellingNum;
 			break;
 		case MAPOBJECT::WALL:
+			pt.x = tMInfo.fX;
+			pt.y = tMInfo.fY;
+			m_pInstatnce->Insert_MapObject(MAPOBJECT::WALL, CWall::Create(pt));
+			m_pInstatnce->Get_MapManeger()->Get_ObjectVector(MAPOBJECT::WALL)->back()->SetMINFO()->iWallNum = tMInfo.iWallNum;
 			break;
 		default:
 			break;
 		}
 	}
 	CloseHandle(hFile);
-	MessageBox(nullptr, L"불러오기 완료", L"불러오기 시스템", MB_OK);
+	//MessageBox(nullptr, L"불러오기 완료", L"불러오기 시스템", MB_OK);
+}
+
+void CMapObjectManeger::Update_Scroll()
+{
+	for (int i = 0; i < MAPOBJECT::END; i++)
+	{
+		for (auto& pObject : m_pMapObjectList[i])
+		{
+			pObject->SetMINFO()->fX += CScrollManeger::Get_ScrollX();
+			pObject->SetMINFO()->fY += CScrollManeger::Get_ScrollY();
+		}
+	}
 }
 
 int CMapObjectManeger::Release_MapObjectManeger()
@@ -91,11 +113,25 @@ int CMapObjectManeger::Release_MapObjectManeger()
 
 int CMapObjectManeger::Render_MapObjectManeger(HDC hdc)
 {
+	//컬링
+
+	float fScrollX = CScrollManeger::Get_ScrollX();
+	float fScrollY = CScrollManeger::Get_ScrollY();
+
+	float ScreenXL = 0 - fScrollX;
+	float ScreenXR = WINCX - fScrollX;
+	float ScreenYT = 0 - fScrollY;
+	float ScreenYB = WINCY - fScrollY;
 	for (int i = 0; i < MAPOBJECT::END; ++i)
 	{
 		for (auto& iter = m_pMapObjectList[i].begin(); iter != m_pMapObjectList[i].end(); ++iter)
 		{
-			(*iter)->Render_MapObject(hdc);
+			if (ScreenXL <= (*iter)->GetMInfo()->fX || ScreenXR >= (*iter)->GetMInfo()->fX)
+			{
+				if (ScreenYT <= (*iter)->GetMInfo()->fY || ScreenYB >= (*iter)->GetMInfo()->fY)
+					(*iter)->Render_MapObject(hdc);
+			}
+
 		}
 	}
 	return Function_Pass;
@@ -121,6 +157,7 @@ int CMapObjectManeger::Update_MapObjectManerger()
 
 		}
 	}
+
 	return Function_Pass;
 }
 

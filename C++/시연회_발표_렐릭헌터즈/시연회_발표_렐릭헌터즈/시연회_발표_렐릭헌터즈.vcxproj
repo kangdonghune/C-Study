@@ -146,6 +146,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BitmapManeger.h" />
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="BossGun.h" />
+    <ClInclude Include="BossHPBar.h" />
+    <ClInclude Include="BossStage.h" />
+    <ClInclude Include="ColliderManeger.h" />
     <ClInclude Include="C_Bitmap.h" />
     <ClInclude Include="define.h" />
     <ClInclude Include="Editor.h" />
@@ -154,11 +159,25 @@
     <ClInclude Include="function.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectManeger.h" />
+    <ClInclude Include="Grenade.h" />
     <ClInclude Include="Gun.h" />
+    <ClInclude Include="Guns.h" />
+    <ClInclude Include="HpBar.h" />
+    <ClInclude Include="Item.h" />
+    <ClInclude Include="Logo.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="MainMenu.h" />
     <ClInclude Include="MapObject.h" />
     <ClInclude Include="MapObjectManeger.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="Pistol.h" />
+    <ClInclude Include="PlayerHP.h" />
+    <ClInclude Include="Portal.h" />
+    <ClInclude Include="PushButton.h" />
+    <ClInclude Include="ShotGun.h" />
+    <ClInclude Include="StageLogo.h" />
+    <ClInclude Include="Turtle.h" />
+    <ClInclude Include="MonsterManeger.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Player_Bullet.h" />
     <ClInclude Include="Resource.h" />
@@ -172,21 +191,41 @@
     <ClInclude Include="Tile.h" />
     <ClInclude Include="Celling.h" />
     <ClInclude Include="Wall.h" />
+    <ClInclude Include="Wave.h" />
     <ClInclude Include="시연회_발표_렐릭헌터즈.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BitmapManeger.cpp" />
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="BossGun.cpp" />
+    <ClCompile Include="BossHPBar.cpp" />
+    <ClCompile Include="BossStage.cpp" />
+    <ClCompile Include="ColliderManeger.cpp" />
     <ClCompile Include="C_Bitmap.cpp" />
     <ClCompile Include="Editor.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectManeger.cpp" />
+    <ClCompile Include="Grenade.cpp" />
     <ClCompile Include="Gun.cpp" />
+    <ClCompile Include="Guns.cpp" />
+    <ClCompile Include="HpBar.cpp" />
+    <ClCompile Include="Item.cpp" />
+    <ClCompile Include="Logo.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="MapObject.cpp" />
     <ClCompile Include="MapObjectManeger.cpp" />
+    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="Pistol.cpp" />
+    <ClCompile Include="PlayerHP.cpp" />
+    <ClCompile Include="Player_bullet.cpp" />
+    <ClCompile Include="Portal.cpp" />
+    <ClCompile Include="PushButton.cpp" />
+    <ClCompile Include="ShotGun.cpp" />
+    <ClCompile Include="StageLogo.cpp" />
+    <ClCompile Include="Turtle.cpp" />
+    <ClCompile Include="MonsterManeger.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Player_Bullet.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="SceneManeger.cpp" />
     <ClCompile Include="ScrollManeger.cpp" />
@@ -200,6 +239,7 @@
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="Celling.cpp" />
     <ClCompile Include="Wall.cpp" />
+    <ClCompile Include="Wave.cpp" />
     <ClCompile Include="시연회_발표_렐릭헌터즈.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +248,9 @@
   <ItemGroup>
     <Image Include="small.ico" />
     <Image Include="시연회_발표_렐릭헌터즈.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cursor1.cur" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
