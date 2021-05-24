@@ -172,6 +172,7 @@
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Pistol.h" />
     <ClInclude Include="PlayerHP.h" />
+    <ClInclude Include="Player_Bullet.h" />
     <ClInclude Include="Portal.h" />
     <ClInclude Include="PushButton.h" />
     <ClInclude Include="ShotGun.h" />
@@ -179,7 +180,6 @@
     <ClInclude Include="Turtle.h" />
     <ClInclude Include="MonsterManeger.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Player_Bullet.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManeger.h" />
@@ -218,7 +218,7 @@
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Pistol.cpp" />
     <ClCompile Include="PlayerHP.cpp" />
-    <ClCompile Include="Player_bullet.cpp" />
+    <ClCompile Include="Player_Bullet.cpp" />
     <ClCompile Include="Portal.cpp" />
     <ClCompile Include="PushButton.cpp" />
     <ClCompile Include="ShotGun.cpp" />

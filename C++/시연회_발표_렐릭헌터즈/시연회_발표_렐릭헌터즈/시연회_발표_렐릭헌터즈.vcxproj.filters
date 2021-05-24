@@ -185,9 +185,6 @@
     <ClInclude Include="GameObjectManeger.h">
       <Filter>소스 파일\01.game-object\00.maneger</Filter>
     </ClInclude>
-    <ClInclude Include="Player_Bullet.h">
-      <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
-    </ClInclude>
     <ClInclude Include="Tile.h">
       <Filter>소스 파일\02.mapobject\00.Tile</Filter>
     </ClInclude>
@@ -286,6 +283,9 @@
     </ClInclude>
     <ClInclude Include="Guns.h">
       <Filter>소스 파일\01.game-object\04.Gun</Filter>
+    </ClInclude>
+    <ClInclude Include="Player_Bullet.h">
+      <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -409,7 +409,7 @@
     <ClCompile Include="Guns.cpp">
       <Filter>소스 파일\01.game-object\04.Gun</Filter>
     </ClCompile>
-    <ClCompile Include="Player_bullet.cpp">
+    <ClCompile Include="Player_Bullet.cpp">
       <Filter>소스 파일\01.game-object\02.Bullet\00.Player_bullet</Filter>
     </ClCompile>
   </ItemGroup>
