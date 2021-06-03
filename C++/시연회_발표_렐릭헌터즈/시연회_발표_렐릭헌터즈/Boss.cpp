@@ -102,7 +102,7 @@ void CBoss::UpdateHitBox()
 
 int CBoss::Ready_GameObject()
 {
-	m_tInfo.iMaxHp = 300;
+	m_tInfo.iMaxHp = 800;
 	m_tInfo.iHP = m_tInfo.iMaxHp;
 	m_tInfo.iCX = Boss_CX;
 	m_tInfo.iCY = Boss_CY;
@@ -140,7 +140,7 @@ int CBoss::Update_GameObject()
 	UpdateRect();
 	UpdateHitBox();
 	CheckTargetDir(m_pTarget);
-	if (300 > m_tInfo.iHP && !m_bEggCrash)
+	if (800 > m_tInfo.iHP && !m_bEggCrash)
 	{
 		m_bEggCrash = true;
 		m_iState = EGGCRACK;
